@@ -1,16 +1,57 @@
-# React + Vite
+# Trending Peptide Design Lab Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-contrast, editorial web dashboard for visualizing peptide chains and their back-translated genetic blueprints.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 6](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 3](https://tailwindcss.com/)
+- **Typography**: Inter (Sans), JetBrains Mono (Mono)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Searchable Peptide Feed**: Explore peptides by name, market trend, clinical use, and side effects.
+- **Sequence Visualization**: Horizontal "string of beads" representation of amino acid sequences.
+- **Genetic Mapping**: Synchronized alignment of mRNA, Coding DNA, and Template DNA block-by-block with the amino acids.
+- **Editorial Aesthetic**: Obsidian and charcoal dark theme for a sophisticated laboratory feel.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+Navigate to the `web_client/` directory and install dependencies:
+
+```bash
+cd web_client
+npm install
+```
+
+### Development Server
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the port specified in your terminal).
+
+### Production Build
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The output will be in the `dist/` directory.
+
+## Data Integration
+
+The dashboard reads biological data from `core_engine/enriched_peptides.json` via a symlink located at `src/data/peptides.json`. This ensures that any updates to the core engine's data are immediately reflected in the dashboard.
