@@ -1,0 +1,34 @@
+{
+  "peptides": [
+    {
+      "id": "ghk-cu",
+      "name": "Copper Peptide (GHK-Cu)",
+      "market_trend": "Skincare & Anti-Aging / Tissue Remodeling",
+      "sequence_three_letter": ["Gly", "His", "Lys"],
+      "sequence_one_letter": "GHK",
+      "molecular_target": "Upregulates collagen, elastin, and decorin synthesis; modulates metalloproteinases.",
+      "clinical_use": "Accelerates wound healing, skin rejuvenation, and exhibits anti-inflammatory properties.",
+      "reported_side_effects": "Generally none topically; potential flushing or localized irritation if concentration is excessively high."
+    },
+    {
+      "id": "argireline",
+      "name": "Argireline (Acetyl Hexapeptide-8)",
+      "market_trend": "Topical Cosmetic Actives / 'Botox Alternative'",
+      "sequence_three_letter": ["Glu", "Glu", "Met", "Gln", "Arg", "Arg"],
+      "sequence_one_letter": "EEMQRR",
+      "molecular_target": "Mimics the N-terminal end of the SNAP-25 protein; competitively inhibits the SNARE complex formation to destabilize vesicle release of acetylcholine.",
+      "clinical_use": "Topical reduction of expression wrinkle depth caused by repetitive muscle movement.",
+      "reported_side_effects": "Exceedingly low toxicity profile; mild skin dryness or peeling in sensitive individuals if overused."
+    },
+    {
+      "id": "bpc-157",
+      "name": "Body Protection Compound-157",
+      "market_trend": "Biohacking / Regenerative Therapeutics",
+      "sequence_three_letter": ["Gly", "Glu", "Pro", "Pro", "Pro", "Gly", "Lys", "Pro", "Ala", "Asp", "Asp", "Ala", "Gly", "Leu", "Val"],
+      "sequence_one_letter": "GEPPPXKPADDAGLV",
+      "molecular_target": "Upregulates Vascular Endothelial Growth Factor (VEGF) expression; accelerates angiogenesis and cell migration pathways.",
+      "clinical_use": "Investigational use for accelerating soft tissue repair (tendons, ligaments), gastric ulcer healing, and systemic anti-inflammatory signaling.",
+      "reported_side_effects": "Long-term human systemic safety profile data remains restricted; highly variable bio-availability based on route of administration."
+    }
+  ]
+}
