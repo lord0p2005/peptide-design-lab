@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [selectedPeptide, setSelectedPeptide] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
@@ -39,16 +40,36 @@ function App() {
     );
   }
 
+  const handleSelectPeptide = (peptide) => {
+    setSelectedPeptide(peptide);
+    // On mobile, close sidebar after selection
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   return (
-    <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans">
+    <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans relative">
+      {/* Mobile Toggle */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="fixed bottom-6 right-6 z-50 md:hidden bg-white text-obsidian p-4 rounded-full shadow-2xl font-black uppercase text-[10px] tracking-widest"
+      >
+        {isSidebarOpen ? 'Close' : 'Menu'}
+      </button>
+
       <Sidebar
         peptides={filteredPeptides}
         selectedPeptideId={selectedPeptide?.id}
-        onSelectPeptide={setSelectedPeptide}
+        onSelectPeptide={handleSelectPeptide}
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
+        isOpen={isSidebarOpen}
       />
-      <PeptideCanvas peptide={selectedPeptide} />
+
+      <main className={`flex-1 transition-all duration-500 ${isSidebarOpen ? 'md:ml-0' : 'ml-0'}`}>
+        <PeptideCanvas peptide={selectedPeptide} />
+      </main>
     </div>
   );
 }
