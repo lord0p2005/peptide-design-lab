@@ -37,8 +37,10 @@ class PeptideEngine:
         self.peptides_db = self._load_database()
 
     def _load_database(self):
-        if os.path.exists(self.db_path):
-            with open(self.db_path, 'r') as f:
+        # Resolve path relative to script location if needed
+        db_full_path = os.path.join(os.path.dirname(__file__), self.db_path)
+        if os.path.exists(db_full_path):
+            with open(db_full_path, 'r') as f:
                 return json.load(f).get("peptides", [])
         return []
 
@@ -98,7 +100,7 @@ if __name__ == "__main__":
         compiled_outputs.append(enriched_peptide)
         
     # Export this enriched data so our future web UI can read it instantly
-    export_path = "enriched_peptides.json"
+    export_path = os.path.join(os.path.dirname(__file__), "enriched_peptides.json")
     with open(export_path, 'w') as f:
         json.dump(compiled_outputs, f, indent=2)
         

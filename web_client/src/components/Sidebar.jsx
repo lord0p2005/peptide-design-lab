@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange }) => {
+const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen }) => {
   return (
-    <div className="w-96 h-screen bg-charcoal border-r border-white/10 flex flex-col">
+    <div className={`
+      fixed inset-0 z-40 md:relative md:inset-auto
+      w-full md:w-96 h-screen bg-charcoal border-r border-white/10 flex flex-col
+      transition-transform duration-500 ease-in-out
+      ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+    `}>
       <div className="p-6">
         <h1 className="text-xl font-bold tracking-tighter uppercase mb-6 text-white">
           Peptide Lab

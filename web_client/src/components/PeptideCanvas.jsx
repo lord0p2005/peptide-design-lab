@@ -20,21 +20,21 @@ const PeptideCanvas = ({ peptide }) => {
   const labelWidth = "w-32";
 
   return (
-    <div className="flex-1 h-screen overflow-y-auto bg-obsidian p-12">
+    <div className="flex-1 h-screen overflow-y-auto bg-obsidian p-4 md:p-12">
       <div className="max-w-6xl mx-auto">
         <header className="mb-16 border-b border-white/10 pb-8">
-          <div className="flex justify-between items-end mb-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-4">
             <div>
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Molecular Profile</p>
-              <h2 className="text-5xl font-black tracking-tighter text-white uppercase">{peptide.name}</h2>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase leading-none">{peptide.name}</h2>
             </div>
-            <div className="text-right">
+            <div className="md:text-right">
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Market Trend</p>
               <p className="text-sm font-medium text-white">{peptide.market_trend}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-12 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-8">
             <div>
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Clinical Use</p>
               <p className="text-sm leading-relaxed text-white/80 italic">{peptide.clinical_use}</p>
@@ -47,10 +47,18 @@ const PeptideCanvas = ({ peptide }) => {
         </header>
 
         <section className="mb-16">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Sequence Visualization</p>
+          <div className="flex justify-between items-center mb-8">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">Sequence Visualization</p>
+            {peptide.chemical_formula && (
+              <div className="bg-white/5 px-3 py-1 border border-white/10 rounded-full">
+                 <p className="text-[9px] uppercase tracking-widest text-white/60 inline-block mr-2">Formula:</p>
+                 <span className="text-xs font-mono text-cyan-400 font-bold">{peptide.chemical_formula}</span>
+              </div>
+            )}
+          </div>
 
           {/* Main Visualization Container */}
-          <div className="bg-charcoal/30 border border-white/5 p-10 overflow-x-auto rounded-sm">
+          <div className="bg-charcoal/30 border border-white/5 p-6 md:p-10 overflow-x-auto rounded-sm">
             <div className="min-w-max">
 
               {/* Amino Acid String of Beads */}

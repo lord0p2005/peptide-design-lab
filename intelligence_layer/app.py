@@ -34,6 +34,30 @@ PKA_VALUES = {
     'R': 12.48, 'D': 3.86, 'C': 8.33, 'E': 4.25, 'H': 6.00, 'K': 10.53, 'Y': 10.07
 }
 
+# Chemical formulas for residues
+AMINO_ACID_FORMULAS = {
+    'A': {'C': 3, 'H': 5, 'N': 1, 'O': 1},
+    'R': {'C': 6, 'H': 12, 'N': 4, 'O': 1},
+    'N': {'C': 4, 'H': 6, 'N': 2, 'O': 2},
+    'D': {'C': 4, 'H': 5, 'N': 1, 'O': 3},
+    'C': {'C': 3, 'H': 5, 'N': 1, 'O': 1, 'S': 1},
+    'Q': {'C': 5, 'H': 8, 'N': 2, 'O': 2},
+    'E': {'C': 5, 'H': 7, 'N': 1, 'O': 3},
+    'G': {'C': 2, 'H': 3, 'N': 1, 'O': 1},
+    'H': {'C': 6, 'H': 7, 'N': 3, 'O': 1},
+    'I': {'C': 6, 'H': 11, 'N': 1, 'O': 1},
+    'L': {'C': 6, 'H': 11, 'N': 1, 'O': 1},
+    'K': {'C': 6, 'H': 12, 'N': 2, 'O': 1},
+    'M': {'C': 5, 'H': 9, 'N': 1, 'O': 1, 'S': 1},
+    'F': {'C': 9, 'H': 9, 'N': 1, 'O': 1},
+    'P': {'C': 5, 'H': 7, 'N': 1, 'O': 1},
+    'S': {'C': 3, 'H': 5, 'N': 1, 'O': 2},
+    'T': {'C': 4, 'H': 7, 'N': 1, 'O': 2},
+    'W': {'C': 11, 'H': 10, 'N': 2, 'O': 1},
+    'Y': {'C': 9, 'H': 9, 'N': 1, 'O': 2},
+    'V': {'C': 5, 'H': 9, 'N': 1, 'O': 1}
+}
+
 class PeptideRequest(BaseModel):
     sequence: str
 
@@ -81,6 +105,20 @@ def calculate_hydrophobicity(sequence):
     values = [HYDROPHOBICITY_SCALE.get(aa, 0) for aa in sequence]
     return round(sum(values) / len(values), 2)
 
+def calculate_chemical_formula(sequence):
+    totals = {'C': 0, 'H': 2, 'N': 0, 'O': 1, 'S': 0} # Start with H2O
+    for aa in sequence:
+        formula = AMINO_ACID_FORMULAS.get(aa, {})
+        for element, count in formula.items():
+            totals[element] = totals.get(element, 0) + count
+
+    # Format as string
+    res = ""
+    for el in ['C', 'H', 'N', 'O', 'S']:
+        if totals[el] > 0:
+            res += f"{el}{totals[el]}" if totals[el] > 1 else el
+    return res
+
 @app.get("/")
 def read_root():
     return {"message": "Peptide Intelligence API is running", "model": model_name}
@@ -101,6 +139,7 @@ def predict(request: PeptideRequest):
     mw = calculate_molecular_weight(sequence)
     pi = calculate_isoelectric_point(sequence)
     hydrophobicity = calculate_hydrophobicity(sequence)
+    formula = calculate_chemical_formula(sequence)
 
     # Mock Serum Stability Score (AI-predicted)
     # In a real scenario, this would be a secondary head on the ESM-2 model
@@ -113,6 +152,7 @@ def predict(request: PeptideRequest):
             "molecular_weight": mw,
             "isoelectric_point": pi,
             "hydrophobicity": hydrophobicity,
+            "chemical_formula": formula,
             "serum_stability_score": stability_score
         },
         "embedding_summary": embeddings[:5]  # Return first 5 dimensions as a sample
