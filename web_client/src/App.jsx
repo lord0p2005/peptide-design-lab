@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
-import { fetchPeptides } from './peptideService';
+import { fetchPeptides, predictPeptideProperties } from './peptideService';
 
 function App() {
   const [peptides, setPeptides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedPeptide, setSelectedPeptide] = useState(null);
+  const [aiData, setAiData] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -16,7 +18,7 @@ function App() {
         const data = await fetchPeptides();
         setPeptides(data);
         if (data.length > 0) {
-          setSelectedPeptide(data[0]);
+          handleSelectPeptide(data[0]);
         }
       } catch (error) {
         console.error("Failed to fetch peptides:", error);
@@ -40,8 +42,18 @@ function App() {
     );
   }
 
-  const handleSelectPeptide = (peptide) => {
+  const handleSelectPeptide = async (peptide) => {
     setSelectedPeptide(peptide);
+    setAiData(null);
+    setAiLoading(true);
+
+    // Fetch live AI predictions
+    const prediction = await predictPeptideProperties(peptide.sequence_one_letter);
+    if (prediction) {
+      setAiData(prediction.properties);
+    }
+    setAiLoading(false);
+
     // On mobile, close sidebar after selection
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
@@ -68,7 +80,11 @@ function App() {
       />
 
       <main className={`flex-1 transition-all duration-500 ${isSidebarOpen ? 'md:ml-0' : 'ml-0'}`}>
-        <PeptideCanvas peptide={selectedPeptide} />
+        <PeptideCanvas
+          peptide={selectedPeptide}
+          aiData={aiData}
+          aiLoading={aiLoading}
+        />
       </main>
     </div>
   );
