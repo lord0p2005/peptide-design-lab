@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
-import { fetchPeptides } from './peptideService';
+import { fetchPeptides, predictPeptideProperties } from './peptideService';
 
 function App() {
   const [peptides, setPeptides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedPeptide, setSelectedPeptide] = useState(null);
+  const [aiData, setAiData] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -16,7 +18,7 @@ function App() {
         const data = await fetchPeptides();
         setPeptides(data);
         if (data.length > 0) {
-          setSelectedPeptide(data[0]);
+          handleSelectPeptide(data[0]);
         }
       } catch (error) {
         console.error("Failed to fetch peptides:", error);
@@ -40,6 +42,24 @@ function App() {
     );
   }
 
+  const handleSelectPeptide = async (peptide) => {
+    setSelectedPeptide(peptide);
+    setAiData(null);
+    setAiLoading(true);
+
+    // Fetch live AI predictions
+    const prediction = await predictPeptideProperties(peptide.sequence_one_letter);
+    if (prediction) {
+      setAiData(prediction.properties);
+    }
+    setAiLoading(false);
+
+    // On mobile, close sidebar after selection
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
@@ -57,23 +77,27 @@ function App() {
         </button>
       )}
 
-      <div className={`transition-all duration-300 ease-in-out ${isSidebarOpen ? 'w-96' : 'w-0'} overflow-hidden shrink-0 h-full border-r border-white/10 bg-charcoal`}>
-        <div className="w-96 h-full">
+      <div className={`transition-all duration-300 ease-in-out h-full border-r border-white/10 bg-charcoal overflow-hidden shrink-0 ${isSidebarOpen ? 'w-full md:w-96' : 'w-0'}`}>
+        <div className="w-full md:w-96 h-full">
           <Sidebar
             peptides={filteredPeptides}
             selectedPeptideId={selectedPeptide?.id}
-            onSelectPeptide={setSelectedPeptide}
+            onSelectPeptide={handleSelectPeptide}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
+            isOpen={isSidebarOpen}
             toggleSidebar={toggleSidebar}
-            isSidebarOpen={isSidebarOpen}
           />
         </div>
       </div>
 
-      <div className="flex-1 h-full overflow-hidden">
-        <PeptideCanvas peptide={selectedPeptide} />
-      </div>
+      <main className="flex-1 h-full overflow-hidden">
+        <PeptideCanvas
+          peptide={selectedPeptide}
+          aiData={aiData}
+          aiLoading={aiLoading}
+        />
+      </main>
     </div>
   );
 }

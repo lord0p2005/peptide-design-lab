@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Sidebar = ({
-  peptides,
-  selectedPeptideId,
-  onSelectPeptide,
-  searchTerm,
-  onSearchChange,
-  toggleSidebar,
-  isSidebarOpen
-}) => {
+const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen, toggleSidebar }) => {
   return (
     <div className="h-full flex flex-col">
       <div className="p-6">
@@ -18,7 +10,7 @@ const Sidebar = ({
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`h-5 w-5 transition-transform duration-300 ${!isSidebarOpen ? 'rotate-180' : ''}`}
+            className={`h-5 w-5 transition-transform duration-300 ${!isOpen ? 'rotate-180' : ''}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
