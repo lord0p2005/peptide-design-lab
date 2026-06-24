@@ -73,5 +73,150 @@
       "coding_dna": "GGC GAG CCC CCC CCC ??? AAG CCC GCC GAC GAC GCC GGC CTG GTG",
       "template_dna": "CCG CTC GGG GGG GGG ??? TTC GGG CGG CTG CTG CGG CCG GAC CAC"
     }
+  },
+  {
+    "id": "epitalon",
+    "name": "Epitalon",
+    "market_trend": "Automated Retrieval / Research Grade",
+    "sequence_three_letter": [
+      "Ala",
+      "Glu",
+      "Asp",
+      "Gly"
+    ],
+    "sequence_one_letter": "AEDG",
+    "molecular_target": "Identified via PubChem CID 219042",
+    "clinical_use": "Epitalon is an organic molecular entity.",
+    "reported_side_effects": "Consult clinical literature for safety profile.",
+    "chemical_formula": "C14H22N4O9",
+    "genetic_mapping": {
+      "mrna": "GCC GAG GAC GGC",
+      "coding_dna": "GCC GAG GAC GGC",
+      "template_dna": "CGG CTC CTG CCG"
+    }
+  },
+  {
+    "id": "mots-c",
+    "name": "MOTS-c",
+    "market_trend": "Automated Retrieval / Research Grade",
+    "sequence_three_letter": [
+      "Met",
+      "Arg",
+      "Trp",
+      "Gln",
+      "Glu",
+      "Met",
+      "Gly",
+      "Tyr",
+      "Ile",
+      "Phe",
+      "Tyr",
+      "Pro",
+      "Arg",
+      "Lys",
+      "Leu",
+      "Arg"
+    ],
+    "sequence_one_letter": "MRWQEMGYIFYPRKLR",
+    "molecular_target": "Identified via PubChem CID 146675088",
+    "clinical_use": "No clinical description available via PubChem.",
+    "reported_side_effects": "Consult clinical literature for safety profile.",
+    "chemical_formula": "C101H152N28O22S2",
+    "genetic_mapping": {
+      "mrna": "AUG CUG UGG CAG GAG AUG GGC UAC AUC UUC UAC CCC CUG AAG CUG CUG",
+      "coding_dna": "ATG CTG TGG CAG GAG ATG GGC TAC ATC TTC TAC CCC CTG AAG CTG CTG",
+      "template_dna": "TAC GAC ACC GTC CTC TAC CCG ATG TAG AAG ATG GGG GAC TTC GAC GAC"
+    }
+  },
+  {
+    "id": "semax",
+    "name": "Semax",
+    "market_trend": "Automated Retrieval / Research Grade",
+    "sequence_three_letter": [
+      "Met",
+      "Glu",
+      "His",
+      "Phe",
+      "Pro",
+      "Gly",
+      "Pro"
+    ],
+    "sequence_one_letter": "MEHFPGP",
+    "molecular_target": "Identified via PubChem CID 9811102",
+    "clinical_use": "No clinical description available via PubChem.",
+    "reported_side_effects": "Consult clinical literature for safety profile.",
+    "chemical_formula": "C37H51N9O10S",
+    "genetic_mapping": {
+      "mrna": "AUG GAG CAC UUC CCC GGC CCC",
+      "coding_dna": "ATG GAG CAC TTC CCC GGC CCC",
+      "template_dna": "TAC CTC GTG AAG GGG CCG GGG"
+    }
+  },
+  {
+    "id": "ipamorelin",
+    "name": "Ipamorelin",
+    "market_trend": "Automated Retrieval / Research Grade",
+    "sequence_three_letter": [
+      "Aib",
+      "His",
+      "D-2Nal",
+      "D-Phe",
+      "Lys"
+    ],
+    "sequence_one_letter": "XHXFK",
+    "molecular_target": "Identified via PubChem CID 9831659",
+    "clinical_use": "No clinical description available via PubChem.",
+    "reported_side_effects": "Consult clinical literature for safety profile.",
+    "chemical_formula": "C38H49N9O5",
+    "genetic_mapping": {
+      "mrna": "??? CAC ??? UUC AAG",
+      "coding_dna": "??? CAC ??? TTC AAG",
+      "template_dna": "??? GTG ??? AAG TTC"
+    }
+  },
+  {
+    "id": "thymosin-alpha-1",
+    "name": "Thymosin Alpha-1",
+    "market_trend": "Automated Retrieval / Research Grade",
+    "sequence_three_letter": [
+      "Ser",
+      "Asp",
+      "Ala",
+      "Ala",
+      "Val",
+      "Asp",
+      "Thr",
+      "Ser",
+      "Ser",
+      "Glu",
+      "Ile",
+      "Thr",
+      "Thr",
+      "Lys",
+      "Asp",
+      "Leu",
+      "Lys",
+      "Glu",
+      "Lys",
+      "Lys",
+      "Glu",
+      "Val",
+      "Val",
+      "Glu",
+      "Glu",
+      "Ala",
+      "Glu",
+      "Asn"
+    ],
+    "sequence_one_letter": "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
+    "molecular_target": "Identified via PubChem CID 16130571",
+    "clinical_use": "Thymalfasin is a polypeptide.",
+    "reported_side_effects": "Consult clinical literature for safety profile.",
+    "chemical_formula": "C129H215N33O55",
+    "genetic_mapping": {
+      "mrna": "AGC GAC GCC GCC GUG GAC ACC AGC AGC GAG AUC ACC ACC AAG GAC CUG AAG GAG AAG AAG GAG GUG GUG GAG GAG GCC GAG AAC",
+      "coding_dna": "AGC GAC GCC GCC GTG GAC ACC AGC AGC GAG ATC ACC ACC AAG GAC CTG AAG GAG AAG AAG GAG GTG GTG GAG GAG GCC GAG AAC",
+      "template_dna": "TCG CTG CGG CGG CAC CTG TGG TCG TCG CTC TAG TGG TGG TTC CTG GAC TTC CTC TTC TTC CTC CAC CAC CTC CTC CGG CTC TTG"
+    }
   }
 ]
