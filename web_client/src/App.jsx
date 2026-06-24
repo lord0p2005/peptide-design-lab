@@ -60,26 +60,38 @@ function App() {
     }
   };
 
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   return (
     <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans relative">
-      {/* Mobile Toggle */}
-      <button
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="fixed bottom-6 right-6 z-50 md:hidden bg-white text-obsidian p-4 rounded-full shadow-2xl font-black uppercase text-[10px] tracking-widest"
-      >
-        {isSidebarOpen ? 'Close' : 'Menu'}
-      </button>
+      {/* Floating Toggle Button for when Sidebar is closed */}
+      {!isSidebarOpen && (
+        <button
+          onClick={toggleSidebar}
+          className="absolute top-6 left-6 z-50 p-3 bg-charcoal border border-white/10 text-white hover:bg-white/10 transition-all rounded-sm flex items-center gap-2 group"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <span className="text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">Open Lab</span>
+        </button>
+      )}
 
-      <Sidebar
-        peptides={filteredPeptides}
-        selectedPeptideId={selectedPeptide?.id}
-        onSelectPeptide={handleSelectPeptide}
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-        isOpen={isSidebarOpen}
-      />
+      <div className={`transition-all duration-300 ease-in-out h-full border-r border-white/10 bg-charcoal overflow-hidden shrink-0 ${isSidebarOpen ? 'w-full md:w-96' : 'w-0'}`}>
+        <div className="w-full md:w-96 h-full">
+          <Sidebar
+            peptides={filteredPeptides}
+            selectedPeptideId={selectedPeptide?.id}
+            onSelectPeptide={handleSelectPeptide}
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            isOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+          />
+        </div>
+      </div>
 
-      <main className={`flex-1 transition-all duration-500 ${isSidebarOpen ? 'md:ml-0' : 'ml-0'}`}>
+      <main className="flex-1 h-full overflow-hidden">
         <PeptideCanvas
           peptide={selectedPeptide}
           aiData={aiData}
