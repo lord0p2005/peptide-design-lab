@@ -1,12 +1,35 @@
 import React from 'react';
 
-const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange }) => {
+const Sidebar = ({
+  peptides,
+  selectedPeptideId,
+  onSelectPeptide,
+  searchTerm,
+  onSearchChange,
+  toggleSidebar,
+  isSidebarOpen
+}) => {
   return (
-    <div className="w-96 h-screen bg-charcoal border-r border-white/10 flex flex-col">
+    <div className="h-full flex flex-col">
       <div className="p-6">
-        <h1 className="text-xl font-bold tracking-tighter uppercase mb-6 text-white">
-          Peptide Lab
-        </h1>
+        <button
+          onClick={toggleSidebar}
+          className="flex items-center gap-3 text-white hover:text-white/70 transition-colors group mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-5 w-5 transition-transform duration-300 ${!isSidebarOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+          </svg>
+          <h1 className="text-xl font-bold tracking-tighter uppercase">
+            Peptide Lab
+          </h1>
+        </button>
+
         <div className="relative">
           <input
             type="text"
