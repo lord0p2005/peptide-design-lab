@@ -15,6 +15,22 @@ AA_MAP = {
     'Aib': 'X', 'D-Phe': 'X', 'D-2Nal': 'X', 'Nal': 'X', 'Ac': ''
 }
 
+CATEGORIES = {
+    "Neuro-Regenerative & Nootropic Agents": ["memory", "cognitive", "brain", "focus", "neuro", "neuroprotective", "Semax", "Selank"],
+    "Tissue-Repair & Angiogenic Modulators": ["healing", "repair", "angiogenesis", "wound", "tendon", "gastric", "recovery", "BPC", "GHK"],
+    "Metabolic & Mitochondrial Homeostasis Regulators": ["metabolism", "mitochondrial", "AMPK", "insulin", "glucose", "ATP", "exercise", "MOTS-c"],
+    "Secretagogues & Somatotropic Analogues": ["growth hormone", "secretagogue", "pituitary", "GHRH", "GH", "Ipamorelin"],
+    "Cosmeceutical & Epicutaneous Actives": ["wrinkle", "dermal", "skin", "collagen", "anti-aging", "topical", "Argireline"]
+}
+
+def classify_peptide(description, name):
+    text = f"{name} {description}".lower()
+    for category, keywords in CATEGORIES.items():
+        for kw in keywords:
+            if kw.lower() in text:
+                return category
+    return "Experimental & Unclassified Bioactives"
+
 def get_cid_by_name(name):
     url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{name}/JSON"
     try:
@@ -118,9 +134,14 @@ def fetch_peptide_data(name):
                 mapped.append('X')
         seq_one = "".join([m for m in mapped if m])
 
+    category = classify_peptide(description, name)
+
     peptide_obj = {
         "id": name.lower().replace(" ", "-"),
         "name": name,
+        "category": category,
+        "sequence": seq_one,
+        "description": description[:300] + "..." if len(description) > 300 else description,
         "market_trend": "Automated Retrieval / Research Grade",
         "sequence_three_letter": three_letter_list,
         "sequence_one_letter": seq_one,
@@ -151,8 +172,19 @@ def main():
     parser.add_argument("--keywords", nargs="+", help="Keywords to search for")
     args = parser.parse_args()
 
-    # Targeted list from requirements
-    target_peptides = ["Epitalon", "MOTS-c", "CJC-1295", "Semax", "Ipamorelin", "Thymosin Alpha-1"]
+    # Targeted list expanded to reach 50+
+    target_peptides = [
+        "Epitalon", "MOTS-c", "CJC-1295", "Semax", "Ipamorelin", "Thymosin Alpha-1",
+        "BPC-157", "GHK-Cu", "Argireline", "Selank", "TB-500", "Thymosin Beta-4",
+        "Tesamorelin", "Sermorelin", "GHRP-2", "GHRP-6", "Hexarelin", "Melanotan II",
+        "PT-141", "Humanin", "Kisspeptin-10", "DSIP", "AOD9604", "IGF-1 LR3",
+        "Oxytocin", "Vasopressin", "Gonadorelin", "Triptorelin", "Leuprolide",
+        "Octreotide", "Teriparatide", "Exenatide", "Liraglutide", "Semaglutide",
+        "Tirzepatide", "Afamelanotide", "Alarelin", "Aviptadil", "Bivalirudin",
+        "Calcitonin", "Cetrorelix", "Desmopressin", "Elcatonin", "Enfuvirtide",
+        "Eptifibatide", "Glucagon", "Insulin", "Neseritide", "Pramlintide",
+        "Secretin", "Sincalide", "Somatostatin", "Teduglutide", "Thymopentin"
+    ]
 
     if args.keywords:
         target_peptides.extend(args.keywords)
@@ -166,7 +198,7 @@ def main():
             if data:
                 new_peptides.append(data)
                 print(f"✅ Successfully retrieved {name}")
-            time.sleep(1)
+            time.sleep(0.5) # Reduced sleep slightly to speed up
         except Exception as e:
             print(f"Error processing {name}: {e}")
 
