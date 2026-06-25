@@ -61,8 +61,8 @@
       ],
       "sequence_one_letter": "GEPPPGKPADDAGLV",
       "molecular_target": "Identified via PubChem CID 9941957",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Body Protection Compound-157 is widely researched for its regenerative properties in tendon, muscle, and ligament healing, as well as its protective effects on the gastric mucosa.",
+      "reported_side_effects": "Few reported side effects in research settings; long-term human safety profiles are still under investigation.",
       "chemical_formula": "C62H98N16O22"
     },
     {
@@ -80,8 +80,8 @@
       ],
       "sequence_one_letter": "AEDG",
       "molecular_target": "Identified via PubChem CID 219042",
-      "clinical_use": "Epitalon is an organic molecular entity.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "A synthetic tetrapeptide known for its ability to activate telomerase and regulate melatonin production. It is studied for its anti-aging and life-extension potential.",
+      "reported_side_effects": "No significant adverse effects reported in primary clinical trials; continues to be evaluated for long-term safety.",
       "chemical_formula": "C14H22N4O9"
     },
     {
@@ -111,8 +111,8 @@
       ],
       "sequence_one_letter": "MRWQEMGYIFYPRKLR",
       "molecular_target": "Identified via PubChem CID 146675088",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Mitochondria-derived peptide that regulates metabolic homeostasis, insulin sensitivity, and exercise capacity. It acts as a signaling molecule for mitochondrial-nuclear communication.",
+      "reported_side_effects": "Data on human side effects is limited; primarily investigated in preclinical metabolic models.",
       "chemical_formula": "C101H152N28O22S2"
     },
     {
@@ -133,8 +133,8 @@
       ],
       "sequence_one_letter": "MEHFPGP",
       "molecular_target": "Identified via PubChem CID 9811102",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Nootropic peptide used for cognitive enhancement, neuroprotection, and recovery from ischemic stroke. It modulates the expression of Brain-Derived Neurotrophic Factor (BDNF).",
+      "reported_side_effects": "Generally well-tolerated. Rare instances of mild irritation of the nasal mucosa (if administered via spray).",
       "chemical_formula": "C37H51N9O10S"
     },
     {
@@ -153,8 +153,8 @@
       ],
       "sequence_one_letter": "XHXFK",
       "molecular_target": "Identified via PubChem CID 9831659",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Selective growth hormone secretagogue and ghrelin receptor agonist. Used to stimulate GH release without significantly affecting cortisol or prolactin levels.",
+      "reported_side_effects": "May include flushing, headache, or slight water retention at high dosages.",
       "chemical_formula": "C38H49N9O5"
     },
     {
@@ -197,7 +197,7 @@
       "sequence_one_letter": "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
       "molecular_target": "Identified via PubChem CID 16130571",
       "clinical_use": "Thymalfasin is a polypeptide.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C129H215N33O55"
     },
     {
@@ -210,8 +210,8 @@
       "sequence_three_letter": [],
       "sequence_one_letter": "YADAIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
       "molecular_target": "Identified via PubChem CID 16137828",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C221H366N72O67S"
     },
     {
@@ -254,8 +254,8 @@
       ],
       "sequence_one_letter": "YADAIFTNSYRKVLGQLSARKLLQDIMSR",
       "molecular_target": "Identified via PubChem CID 16132413",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C149H246N44O42S"
     },
     {
@@ -276,7 +276,7 @@
       "sequence_one_letter": "AXAWFK",
       "molecular_target": "Identified via PubChem CID 6918245",
       "clinical_use": "Pralmorelin is an oligopeptide.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C45H55N9O6"
     },
     {
@@ -296,8 +296,8 @@
       ],
       "sequence_one_letter": "HWAWFK",
       "molecular_target": "Identified via PubChem CID 4345065",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C46H56N12O6"
     },
     {
@@ -319,7 +319,7 @@
       "sequence_one_letter": "XDHFRWK",
       "molecular_target": "Identified via PubChem CID 92432",
       "clinical_use": "Melanotan II is an organic molecular entity.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C50H69N15O9"
     },
     {
@@ -382,8 +382,8 @@
       ],
       "sequence_one_letter": "YNWNSFGLRF",
       "molecular_target": "Identified via PubChem CID 25240297",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C63H83N17O14"
     },
     {
@@ -406,8 +406,8 @@
       ],
       "sequence_one_letter": "WAGGDASGE",
       "molecular_target": "Identified via PubChem CID 68816",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C35H48N10O15"
     },
     {
@@ -437,8 +437,8 @@
       ],
       "sequence_one_letter": "YLRIVQCRSVEGSCGF",
       "molecular_target": "Identified via PubChem CID 71300630",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C78H123N23O23S2"
     },
     {
@@ -462,7 +462,7 @@
       "sequence_one_letter": "CYIQNCPLG",
       "molecular_target": "Identified via PubChem CID 439302",
       "clinical_use": "Oxytocin is a cyclic nonapeptide hormone with amino acid sequence CYIQNCPLG that also acts as a neurotransmitter in the brain; the principal uterine-contracting and milk-ejecting hormone of the poster...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C43H66N12O12S2"
     },
     {
@@ -486,7 +486,7 @@
       "sequence_one_letter": "CYFQNCPRG",
       "molecular_target": "Identified via PubChem CID 644077",
       "clinical_use": "Argipressin is the predominant form of mammalian vasopressin (antidiuretic hormone). It is a nonapeptide containing an arginine at residue 8 and two disulfide-linked cysteines at residues of 1 and 6. ...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C46H65N15O12S2"
     },
     {
@@ -511,7 +511,7 @@
       "sequence_one_letter": "XHWSYGLRPG",
       "molecular_target": "Identified via PubChem CID 638793",
       "clinical_use": "Gonadorelin is a ten-membered synthetic oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, glycyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It has ...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C55H75N17O13"
     },
     {
@@ -536,7 +536,7 @@
       "sequence_one_letter": "XHWSYWLRPG",
       "molecular_target": "Identified via PubChem CID 25074470",
       "clinical_use": "Triptorelin is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-tryptophyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It is an agonist analog...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C64H82N18O13"
     },
     {
@@ -561,7 +561,7 @@
       "sequence_one_letter": "XHWSYLLRP",
       "molecular_target": "Identified via PubChem CID 657181",
       "clinical_use": "Leuprolide is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-leucyl, leucyl, arginyl, and N-ethylprolinamide residues joined in sequence. It is a synthetic nonapeptid...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C59H84N16O12"
     },
     {
@@ -583,8 +583,8 @@
       ],
       "sequence_one_letter": "FCFWKTCT",
       "molecular_target": "Identified via PubChem CID 448601",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C49H66N10O10S2"
     },
     {
@@ -633,7 +633,7 @@
       "sequence_one_letter": "SVSEIQLMHNLGKHLNSMERVEWLRKKLQDVHNF",
       "molecular_target": "Identified via PubChem CID 16133850",
       "clinical_use": "Teriparatide can cause cancer according to state or federal government labeling requirements.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C181H291N55O51S2"
     },
     {
@@ -686,8 +686,8 @@
       ],
       "sequence_one_letter": "HGEGTFTSDLSKQMEEEAVRLFIEWLKNGGPSSGAPPPS",
       "molecular_target": "Identified via PubChem CID 45588096",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C184H282N50O60S"
     },
     {
@@ -735,7 +735,7 @@
       "sequence_one_letter": "HAEGTFTSDVSSYLEGQAAKEFIAWLVRGRGXE",
       "molecular_target": "Identified via PubChem CID 16134956",
       "clinical_use": "Liraglutide is a lipopeptide that is an analogue of human GLP-1 in which the lysine residue at position 27 is replaced by arginine and a hexadecanoyl group attached to the remaining lysine via a gluta...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C172H265N43O51"
     },
     {
@@ -762,8 +762,8 @@
       ],
       "sequence_one_letter": "SYSXEHFRWGKPV",
       "molecular_target": "Identified via PubChem CID 16197727",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C78H111N21O19"
     },
     {
@@ -844,8 +844,8 @@
       ],
       "sequence_one_letter": "CGNLSTCMLGTYTQDFNKFHTFPQTAIGVGAP",
       "molecular_target": "Identified via PubChem CID 118984394",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C151H226N40O45S3"
     },
     {
@@ -870,7 +870,7 @@
       "sequence_one_letter": "XXXSYXLRPA",
       "molecular_target": "Identified via PubChem CID 25074887",
       "clinical_use": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C70H92ClN17O14"
     },
     {
@@ -895,7 +895,7 @@
       "sequence_one_letter": "CYFQNCPRG",
       "molecular_target": "Identified via PubChem CID 5311065",
       "clinical_use": "Desmopressin is a synthetic analogue of vasopressin in which 3-mercaptopropionic acid replaces the cysteine residue at position 1 and D-arginine replaces the residue at position 8. An antidiuretic, it...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C46H64N14O12S2"
     },
     {
@@ -940,8 +940,8 @@
       ],
       "sequence_one_letter": "SNLSXXVLGKLSQELHKLQXYPRXDVGAGXP",
       "molecular_target": "Identified via PubChem CID 53395169",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C148H244N42O47"
     },
     {
@@ -1015,7 +1015,7 @@
       "sequence_one_letter": "CXGDWPC",
       "molecular_target": "Identified via PubChem CID 448812",
       "clinical_use": "Eptifibatide is a synthetic homodetic cyclic peptide comprising Nalpha-(3-sulfanylpropanoyl)homoarginyl, glycyl, aspartyl, tryptophyl, prolyl and cysteinamide residues connected in sequence and cyclis...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C35H49N11O9S2"
     },
     {
@@ -1059,7 +1059,7 @@
       "sequence_one_letter": "HSQGTFTSDYSKYLDSRRAQDFVQWLMNT",
       "molecular_target": "Identified via PubChem CID 16132283",
       "clinical_use": "Glucagon is a 29-amino acid peptide hormone consisting of His, Ser, Gln, Gly, Thr, Phe, Thr, Ser, Asp, Tyr, Ser, Lys, Tyr, Leu, Asp, Ser, Arg, Arg, Ala, Gln, Asp, Phe, Val, Gln, Trp, Leu, Met, Asn and...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C153H225N43O49S"
     },
     {
@@ -1125,8 +1125,8 @@
       ],
       "sequence_one_letter": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXXSLYQLENYCN",
       "molecular_target": "Identified via PubChem CID 70678557",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Metabolic & Mitochondrial Homeostasis Regulators domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C256H381N65O77S6"
     },
     {
@@ -1178,7 +1178,7 @@
       "sequence_one_letter": "KCNTATCATQRLANFLVHSSNNFGPILPPTNVGSNTY",
       "molecular_target": "Identified via PubChem CID 70691388",
       "clinical_use": "Pramlintide is a polypeptide.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C171H267N51O53S2"
     },
     {
@@ -1221,8 +1221,8 @@
       ],
       "sequence_one_letter": "XSDGXFXSELSRLRDSARLQRLLQGLV",
       "molecular_target": "Identified via PubChem CID 16129665",
-      "clinical_use": "No clinical description available via PubChem.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C130H219N43O42"
     },
     {
@@ -1246,7 +1246,7 @@
       "sequence_one_letter": "DXMGWMDF",
       "molecular_target": "Identified via PubChem CID 9833444",
       "clinical_use": "Sincalide is an oligopeptide.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C49H62N10O16S3"
     },
     {
@@ -1275,7 +1275,7 @@
       "sequence_one_letter": "AGCKNFFWKTFTSC",
       "molecular_target": "Identified via PubChem CID 16129706",
       "clinical_use": "Somatostatin is a fourteen-membered heterodetic cyclic peptide comprising the sequence Ala-Gly-Cys-Lys-Asn-Phe-Phe-Trp-Lys-Thr-Phe-Thr-Ser-Cys cyclised by a disulfide bridge between the two Cys residu...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C76H104N18O19S2"
     },
     {
@@ -1323,7 +1323,7 @@
       "sequence_one_letter": "HGDGSFSDEMNTILDNLAARDFINWLIQTKITD",
       "molecular_target": "Identified via PubChem CID 16139605",
       "clinical_use": "Teduglutide is a 33-membered polypeptide consisting of His, Gly, Asp, Gly, Ser, Phe, Ser, Asp, Glu, Met, Asn, Thr, Ile, Leu, Asp, Asn, Leu, Ala, Ala, Arg, Asp, Phe, Ile, Asn, Trp, Leu, Ile, Gln, Thr, ...",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C164H252N44O55S"
     },
     {
@@ -1343,8 +1343,119 @@
       "sequence_one_letter": "RKDVY",
       "molecular_target": "Identified via PubChem CID 451417",
       "clinical_use": "Thymopentin is an oligopeptide.",
-      "reported_side_effects": "Consult clinical literature for safety profile.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C30H49N9O9"
+    },
+    {
+      "id": "tb-500",
+      "name": "TB-500",
+      "category": "Experimental & Unclassified Bioactives",
+      "sequence": "LKKTETQ",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [
+        "Leu",
+        "Lys",
+        "Lys",
+        "Thr",
+        "Glu",
+        "Thr",
+        "Gln"
+      ],
+      "sequence_one_letter": "LKKTETQ",
+      "molecular_target": "Identified via PubChem CID 62707662",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
+      "chemical_formula": "Unknown"
+    },
+    {
+      "id": "hexarelin",
+      "name": "Hexarelin",
+      "category": "Experimental & Unclassified Bioactives",
+      "sequence": "HXAWFK",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [
+        "His",
+        "D-Trp",
+        "Ala",
+        "Trp",
+        "D-Phe",
+        "Lys"
+      ],
+      "sequence_one_letter": "HXAWFK",
+      "molecular_target": "Identified via PubChem CID 6918297",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
+      "chemical_formula": "C47H58N12O6"
+    },
+    {
+      "id": "alarelin",
+      "name": "Alarelin",
+      "category": "Experimental & Unclassified Bioactives",
+      "sequence": "XHWSYALRP",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [
+        "Pyr",
+        "His",
+        "Trp",
+        "Ser",
+        "Tyr",
+        "D-Ala",
+        "Leu",
+        "Arg",
+        "Pro",
+        "NHEt"
+      ],
+      "sequence_one_letter": "XHWSYALRP",
+      "molecular_target": "Identified via PubChem CID 9855027",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
+      "chemical_formula": "C56H78N16O12"
+    },
+    {
+      "id": "aviptadil",
+      "name": "Aviptadil",
+      "category": "Experimental & Unclassified Bioactives",
+      "sequence": "HSDAVFTDNYTRLRKQMAVKKYLNSILN",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [
+        "His",
+        "Ser",
+        "Asp",
+        "Ala",
+        "Val",
+        "Phe",
+        "Thr",
+        "Asp",
+        "Asn",
+        "Tyr",
+        "Thr",
+        "Arg",
+        "Leu",
+        "Arg",
+        "Lys",
+        "Gln",
+        "Met",
+        "Ala",
+        "Val",
+        "Lys",
+        "Lys",
+        "Tyr",
+        "Leu",
+        "Asn",
+        "Ser",
+        "Ile",
+        "Leu",
+        "Asn"
+      ],
+      "sequence_one_letter": "HSDAVFTDNYTRLRKQMAVKKYLNSILN",
+      "molecular_target": "Identified via PubChem CID 16132300",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
+      "chemical_formula": "Unknown"
     }
   ]
 }
