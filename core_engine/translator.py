@@ -58,6 +58,10 @@ class PeptideEngine:
                 mrna_sequence.append(HUMAN_OPTIMIZED_CODONS[aa])
             else:
                 mrna_sequence.append("???") # Safety catch for non-standard entries
+
+        # Append an explicit translation termination signal (Stop Codon)
+        mrna_sequence.append(HUMAN_OPTIMIZED_CODONS['STOP'])
+
         return " ".join(mrna_sequence)
 
     def generate_dna_strands(self, mrna_sequence_str):
