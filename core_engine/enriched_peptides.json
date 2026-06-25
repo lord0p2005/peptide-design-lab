@@ -251,7 +251,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "C221H366N72O67S",
+    "chemical_formula": "Unknown",
     "genetic_mapping": {
       "mrna": "UAC GCC GAC GCC AUC UUC ACC AAC AGC UAC CUG AAG GUG CUG GGC CAG CUG AGC GCC CUG AAG CUG CUG CAG GAC AUC AUG AGC CUG CAG CAG GGC GAG AGC AAC CAG GAG CUG GGC GCC CUG GCC CUG CUG UGA",
       "coding_dna": "TAC GCC GAC GCC ATC TTC ACC AAC AGC TAC CTG AAG GTG CTG GGC CAG CTG AGC GCC CTG AAG CTG CTG CAG GAC ATC ATG AGC CTG CAG CAG GGC GAG AGC AAC CAG GAG CTG GGC GCC CTG GCC CTG CTG TGA",
@@ -300,7 +300,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "Unknown",
+    "chemical_formula": "C149H246N44O42S",
     "genetic_mapping": {
       "mrna": "UAC GCC GAC GCC AUC UUC ACC AAC AGC UAC CUG AAG GUG CUG GGC CAG CUG AGC GCC CUG AAG CUG CUG CAG GAC AUC AUG AGC CUG UGA",
       "coding_dna": "TAC GCC GAC GCC ATC TTC ACC AAC AGC TAC CTG AAG GTG CTG GGC CAG CTG AGC GCC CTG AAG CTG CTG CAG GAC ATC ATG AGC CTG TGA",
@@ -450,7 +450,7 @@
       "Phe"
     ],
     "sequence_one_letter": "YNWNSFGLRF",
-    "molecular_target": "Identified via PubChem CID 25240297",
+    "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C63H83N17O14",
@@ -479,10 +479,10 @@
       "Glu"
     ],
     "sequence_one_letter": "WAGGDASGE",
-    "molecular_target": "Identified via PubChem CID 68816",
+    "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "C35H48N10O15",
+    "chemical_formula": "Unknown",
     "genetic_mapping": {
       "mrna": "UGG GCC GGC GGC GAC GCC AGC GGC GAG UGA",
       "coding_dna": "TGG GCC GGC GGC GAC GCC AGC GGC GAG TGA",
@@ -515,7 +515,7 @@
       "Phe"
     ],
     "sequence_one_letter": "YLRIVQCRSVEGSCGF",
-    "molecular_target": "Identified via PubChem CID 71300630",
+    "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C78H123N23O23S2",
@@ -1015,7 +1015,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L...",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "C70H92ClN17O14",
+    "chemical_formula": "Unknown",
     "genetic_mapping": {
       "mrna": "??? ??? ??? AGC UAC ??? CUG CUG CCC GCC UGA",
       "coding_dna": "??? ??? ??? AGC TAC ??? CTG CTG CCC GCC TGA",
@@ -1298,7 +1298,7 @@
       "Asn"
     ],
     "sequence_one_letter": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXXSLYQLENYCN",
-    "molecular_target": "Identified via PubChem CID 70678557",
+    "molecular_target": "Primary sequence evaluated for selective binding within Metabolic & Mitochondrial Homeostasis Regulators pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Metabolic & Mitochondrial Homeostasis Regulators domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C256H381N65O77S6",
@@ -1355,7 +1355,7 @@
       "Tyr"
     ],
     "sequence_one_letter": "KCNTATCATQRLANFLVHSSNNFGPILPPTNVGSNTY",
-    "molecular_target": "Identified via PubChem CID 70691388",
+    "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Pramlintide is a polypeptide.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C171H267N51O53S2",
