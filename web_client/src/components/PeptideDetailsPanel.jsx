@@ -30,13 +30,14 @@ const PeptideDetailsPanel = ({ peptide, analysisData, loading, isOpen, onClose }
           ) : (
             <>
               {/* Categorization */}
-              <section>
+              <section className="animate-in fade-in slide-in-from-right-4 duration-500">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Functional Classification</p>
-                <div className="bg-white/5 p-6 border border-white/5 rounded-sm">
-                  <h3 className="text-emerald-400 font-bold text-sm mb-2 uppercase tracking-wider">
+                <div className="bg-white/5 p-6 border border-white/5 rounded-sm relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-400/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-400/10 transition-colors duration-700" />
+                  <h3 className="text-emerald-400 font-bold text-sm mb-2 uppercase tracking-wider relative z-10">
                     {analysisData?.metadata?.primary_category || peptide.category}
                   </h3>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-2 mt-4 relative z-10">
                     {(analysisData?.metadata?.sub_categories || []).map((sub, i) => (
                       <span key={i} className="text-[9px] px-2 py-1 bg-white/5 border border-white/10 text-white/60 uppercase tracking-widest rounded-full">
                         {sub}
@@ -47,28 +48,28 @@ const PeptideDetailsPanel = ({ peptide, analysisData, loading, isOpen, onClose }
               </section>
 
               {/* Physiochemical Radar (Stats) */}
-              <section>
+              <section className="animate-in fade-in slide-in-from-right-8 duration-700">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">Physiochemical Profile</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-1">
+                  <div className="space-y-1 p-4 bg-white/[0.02] border border-white/5 rounded-sm">
                     <p className="text-[9px] uppercase tracking-widest text-white/30">Net Charge (pH 7)</p>
                     <p className="text-xl font-mono text-white">
                       {analysisData?.physiochemical_properties?.net_charge_at_ph7 ?? 'N/A'}
                     </p>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 p-4 bg-white/[0.02] border border-white/5 rounded-sm">
                     <p className="text-[9px] uppercase tracking-widest text-white/30">Isoelectric Point</p>
                     <p className="text-xl font-mono text-white">
                       {analysisData?.physiochemical_properties?.isoelectric_point ?? 'N/A'}
                     </p>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 p-4 bg-white/[0.02] border border-white/5 rounded-sm">
                     <p className="text-[9px] uppercase tracking-widest text-white/30">MW (Da)</p>
                     <p className="text-xl font-mono text-white">
                       {analysisData?.physiochemical_properties?.molecular_weight ?? 'N/A'}
                     </p>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 p-4 bg-white/[0.02] border border-white/5 rounded-sm">
                     <p className="text-[9px] uppercase tracking-widest text-white/30">Hydrophobicity</p>
                     <p className="text-xl font-mono text-white">
                       {analysisData?.physiochemical_properties?.hydrophobicity_index ?? 'N/A'}

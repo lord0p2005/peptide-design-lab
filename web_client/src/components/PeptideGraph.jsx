@@ -30,6 +30,15 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
     const links = [];
     const categoriesSet = new Set();
 
+    // Add a central index node for the "Obsidian" look
+    nodes.push({
+      id: 'PEPTIDE_CORE',
+      name: 'PEPTIDE LAB',
+      type: 'root',
+      val: 8,
+      color: '#ffffff'
+    });
+
     peptides.forEach(peptide => {
       const affinities = getAffinities(peptide);
 
@@ -46,7 +55,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
         links.push({
           source: category,
           target: peptide.id,
-          strength: affinities.length > 1 ? 0.5 : 1
+          strength: 0.8
         });
       });
     });
@@ -56,10 +65,38 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
         id: category,
         name: category,
         type: 'category',
-        val: 6,
+        val: 5,
         color: '#4ade80' // emerald-400
       });
+
+      // Connect categories to the root node
+      links.push({
+        source: 'PEPTIDE_CORE',
+        target: category,
+        strength: 0.3
+      });
     });
+
+    // Add similarity links between peptides
+    for (let i = 0; i < peptides.length; i++) {
+      for (let j = i + 1; j < peptides.length; j++) {
+        const p1 = peptides[i];
+        const p2 = peptides[j];
+        const aff1 = getAffinities(p1);
+        const aff2 = getAffinities(p2);
+
+        // Count shared affinities
+        const shared = aff1.filter(a => aff2.includes(a));
+        if (shared.length >= 2) {
+          links.push({
+            source: p1.id,
+            target: p2.id,
+            type: 'similarity',
+            strength: 0.1
+          });
+        }
+      }
+    }
 
     return { nodes, links };
   }, [peptides]);
@@ -83,18 +120,47 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
         nodeLabel="name"
         nodeRelSize={6}
         nodeColor={node => node.color}
-        linkColor={() => 'rgba(255, 255, 255, 0.05)'}
+        linkColor={link => link.type === 'similarity' ? 'rgba(251, 191, 36, 0.05)' : 'rgba(255, 255, 255, 0.05)'}
+        linkWidth={link => link.type === 'similarity' ? 0.5 : 1}
         backgroundColor="#050505"
         onNodeClick={handleNodeClick}
         nodeCanvasObject={(node, ctx, globalScale) => {
+          if (!node || typeof node.x === 'undefined') return;
+
           const label = node.name;
-          const fontSize = node.type === 'category' ? 14 / globalScale : 10 / globalScale;
-          ctx.font = `${node.type === 'category' ? 'bold' : 'normal'} ${fontSize}px Inter, sans-serif`;
+          let fontSize = 10 / globalScale;
+          let radius = 2.5;
+          let fontWeight = 'normal';
+
+          if (node.type === 'root') {
+            fontSize = 16 / globalScale;
+            radius = 6;
+            fontWeight = '900';
+          } else if (node.type === 'category') {
+            fontSize = 12 / globalScale;
+            radius = 4;
+            fontWeight = 'bold';
+          }
+
+          ctx.font = `${fontWeight} ${fontSize}px sans-serif`;
+
+          // Draw node glow
+          if (node.type !== 'peptide' || node.color === '#fbbf24') {
+            try {
+              const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 3);
+              gradient.addColorStop(0, `${node.color}33`);
+              gradient.addColorStop(1, 'transparent');
+              ctx.fillStyle = gradient;
+              ctx.beginPath();
+              ctx.arc(node.x, node.y, radius * 3, 0, 2 * Math.PI, false);
+              ctx.fill();
+            } catch (e) {}
+          }
 
           // Draw node
           ctx.fillStyle = node.color;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, node.type === 'category' ? 5 : 2.5, 0, 2 * Math.PI, false);
+          ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI, false);
           ctx.fill();
 
           if (node.type === 'peptide' && node.color === '#fbbf24') {
@@ -104,15 +170,26 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
           }
 
           // Draw label
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillStyle = node.color;
-          ctx.globalAlpha = 0.8;
-          ctx.fillText(label, node.x, node.y + (node.type === 'category' ? 10 : 8));
-          ctx.globalAlpha = 1.0;
+          if (globalScale > 1.2 || node.type !== 'peptide') {
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = node.color;
+            ctx.globalAlpha = 0.6;
+            ctx.fillText(label, node.x, node.y + radius + (8 / globalScale));
+            ctx.globalAlpha = 1.0;
+          }
         }}
-        cooldownTicks={100}
-        d3VelocityDecay={0.3}
+        cooldownTicks={150}
+        d3VelocityDecay={0.4}
+        d3AlphaDecay={0.01}
+        d3Force={(d3) => {
+          d3.force('charge').strength(-150);
+          d3.force('link').distance(link => {
+            if (link.source.type === 'root') return 150;
+            if (link.type === 'similarity') return 30;
+            return 80;
+          });
+        }}
       />
 
       <div className="absolute bottom-6 left-6 z-10 flex gap-6 bg-charcoal/50 backdrop-blur-md p-4 border border-white/5 rounded-sm">

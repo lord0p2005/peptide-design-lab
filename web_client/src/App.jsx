@@ -18,40 +18,12 @@ function App() {
   const [analysisLoading, setAnalysisLoading] = useState(false);
   const [isDetailPanelOpen, setIsDetailPanelOpen] = useState(false);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchPeptides();
-        setPeptides(data);
-        if (data.length > 0) {
-          handleSelectPeptide(data[0]);
-        }
-      } catch (error) {
-        console.error("Failed to fetch peptides:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadData();
-  }, []);
-
-  const filteredPeptides = peptides.filter(p =>
-    p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.id.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  if (loading) {
-    return (
-      <div className="h-screen w-screen bg-obsidian flex items-center justify-center">
-        <div className="text-white text-xs uppercase tracking-[0.5em] animate-pulse">Initializing Lab...</div>
-      </div>
-    );
-  }
-
-  const handleSelectPeptide = async (peptide) => {
+  const handleSelectPeptide = async (peptide, currentViewMode) => {
     setSelectedPeptide(peptide);
 
-    if (viewMode === 'canvas') {
+    const mode = currentViewMode || viewMode;
+
+    if (mode === 'canvas') {
       setAiData(null);
       setAiLoading(true);
       const prediction = await predictPeptideProperties(peptide.sequence_one_letter);
@@ -75,6 +47,36 @@ function App() {
       setIsSidebarOpen(false);
     }
   };
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchPeptides();
+        setPeptides(data);
+        if (data.length > 0) {
+          handleSelectPeptide(data[0], viewMode);
+        }
+      } catch (error) {
+        console.error("Failed to fetch peptides:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+
+  const filteredPeptides = peptides.filter(p =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    p.id.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  if (loading) {
+    return (
+      <div className="h-screen w-screen bg-obsidian flex items-center justify-center">
+        <div className="text-white text-xs uppercase tracking-[0.5em] animate-pulse">Initializing Lab...</div>
+      </div>
+    );
+  }
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
