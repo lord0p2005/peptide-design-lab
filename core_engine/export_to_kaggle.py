@@ -18,10 +18,9 @@ def export_to_csv():
         print("❌ Error: No data found in JSON.")
         return
 
-    # Extract headers from the first object
-    # We'll flatten the genetic_mapping for easier CSV usage
+    # Extract headers
     headers = [
-        "id", "name", "category", "sequence", "molecular_target",
+        "id", "name", "category", "market_trend", "sequence", "molecular_target",
         "clinical_use", "reported_side_effects", "chemical_formula",
         "mrna_sequence", "coding_dna", "template_dna"
     ]
@@ -35,7 +34,8 @@ def export_to_csv():
                 "id": p.get("id"),
                 "name": p.get("name"),
                 "category": p.get("category"),
-                "sequence": p.get("sequence"),
+                "market_trend": p.get("market_trend"),
+                "sequence": p.get("sequence_one_letter"), # Map to sequence_one_letter
                 "molecular_target": p.get("molecular_target"),
                 "clinical_use": p.get("clinical_use"),
                 "reported_side_effects": p.get("reported_side_effects"),
