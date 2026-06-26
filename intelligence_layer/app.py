@@ -1,10 +1,19 @@
 import torch
 from transformers import AutoTokenizer, EsmModel
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
 import re
 
 app = FastAPI(title="Peptide Intelligence API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load ESM-2 model and tokenizer
 model_name = "facebook/esm2_t6_8M_UR50D"
@@ -119,6 +128,20 @@ def calculate_chemical_formula(sequence):
             res += f"{el}{totals[el]}" if totals[el] > 1 else el
     return res
 
+def calculate_net_charge(sequence, ph=7.0):
+    charge = 0.0
+    # N-terminal
+    charge += 1.0 / (1.0 + 10**(ph - PKA_VALUES['N-term']))
+    # C-terminal
+    charge -= 1.0 / (1.0 + 10**(PKA_VALUES['C-term'] - ph))
+
+    for aa in sequence:
+        if aa in ['R', 'K', 'H']:
+            charge += 1.0 / (1.0 + 10**(ph - PKA_VALUES[aa]))
+        elif aa in ['D', 'E', 'C', 'Y']:
+            charge -= 1.0 / (1.0 + 10**(PKA_VALUES[aa] - ph))
+    return round(charge, 2)
+
 @app.get("/")
 def read_root():
     return {"message": "Peptide Intelligence API is running", "model": model_name}
@@ -156,6 +179,63 @@ def predict(request: PeptideRequest):
             "serum_stability_score": stability_score
         },
         "embedding_summary": embeddings[:5]  # Return first 5 dimensions as a sample
+    }
+
+@app.post("/analyze")
+def analyze(request: PeptideRequest):
+    sequence = request.sequence
+
+    # Biophysical calculations
+    mw = calculate_molecular_weight(sequence)
+    pi = calculate_isoelectric_point(sequence)
+    net_charge = calculate_net_charge(sequence, ph=7.0)
+    hydrophobicity = calculate_hydrophobicity(sequence)
+
+    # Intelligent Categorization Logic
+    primary_category = "Experimental & Unclassified"
+    sub_categories = []
+    nodes = []
+    similar_peptides = []
+
+    # Simple motif-based classification
+    if net_charge > 2.0 and hydrophobicity > 0.5:
+        primary_category = "Antimicrobial / Host Defense"
+        sub_categories = ["Cell-Penetrating", "Membrane-Active"]
+        nodes = ["Cationic Surface", "Lytic Activity"]
+        similar_peptides = ["LL-37", "Magainin"]
+    elif "GHK" in sequence:
+        primary_category = "Tissue Repair & Aesthetics"
+        sub_categories = ["Angiogenesis", "Collagen Synthesis", "Wound Healing"]
+        nodes = ["Tissue Repair", "Extracellular Matrix", "Copper-Binding"]
+        similar_peptides = ["BPC-157", "TB-500"]
+    elif any(motif in sequence for motif in ["MEH", "SEL"]):
+        primary_category = "Neuro-Regenerative & Nootropic"
+        sub_categories = ["Cognitive Enhancement", "Neuroprotection"]
+        nodes = ["BDNF Modulation", "Synaptic Plasticity"]
+        similar_peptides = ["Semax", "Selank"]
+    elif mw > 3000:
+        primary_category = "Metabolic & Mitochondrial"
+        sub_categories = ["Incretin Mimetics", "Metabolic Homeostasis"]
+        nodes = ["GLP-1 Receptor", "Insulin Sensitivity"]
+        similar_peptides = ["Semaglutide", "Liraglutide"]
+
+    return {
+        "sequence": sequence,
+        "metadata": {
+            "common_name": f"Synthetic Sequence {sequence[:4]}...",
+            "primary_category": primary_category,
+            "sub_categories": sub_categories
+        },
+        "physiochemical_properties": {
+            "molecular_weight": mw,
+            "isoelectric_point": pi,
+            "net_charge_at_ph7": net_charge,
+            "hydrophobicity_index": hydrophobicity
+        },
+        "graph_connections": {
+            "nodes": nodes,
+            "similar_peptides": similar_peptides
+        }
     }
 
 if __name__ == "__main__":

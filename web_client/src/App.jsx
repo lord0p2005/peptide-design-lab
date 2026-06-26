@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
-import { fetchPeptides, predictPeptideProperties } from './peptideService';
+import PeptideGraph from './components/PeptideGraph';
+import PeptideDetailsPanel from './components/PeptideDetailsPanel';
+import { fetchPeptides, predictPeptideProperties, analyzePeptide } from './peptideService';
 
 function App() {
   const [peptides, setPeptides] = useState([]);
@@ -11,6 +13,10 @@ function App() {
   const [aiLoading, setAiLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [viewMode, setViewMode] = useState('canvas'); // 'canvas' or 'graph'
+  const [analysisData, setAnalysisData] = useState(null);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [isDetailPanelOpen, setIsDetailPanelOpen] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -44,15 +50,25 @@ function App() {
 
   const handleSelectPeptide = async (peptide) => {
     setSelectedPeptide(peptide);
-    setAiData(null);
-    setAiLoading(true);
 
-    // Fetch live AI predictions
-    const prediction = await predictPeptideProperties(peptide.sequence_one_letter);
-    if (prediction) {
-      setAiData(prediction.properties);
+    if (viewMode === 'canvas') {
+      setAiData(null);
+      setAiLoading(true);
+      const prediction = await predictPeptideProperties(peptide.sequence_one_letter);
+      if (prediction) {
+        setAiData(prediction.properties);
+      }
+      setAiLoading(false);
+    } else {
+      setIsDetailPanelOpen(true);
+      setAnalysisData(null);
+      setAnalysisLoading(true);
+      const analysis = await analyzePeptide(peptide.sequence_one_letter);
+      if (analysis) {
+        setAnalysisData(analysis);
+      }
+      setAnalysisLoading(false);
     }
-    setAiLoading(false);
 
     // On mobile, close sidebar after selection
     if (window.innerWidth < 768) {
@@ -64,6 +80,22 @@ function App() {
 
   return (
     <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans relative">
+      {/* View Switcher Toggle */}
+      <div className="absolute top-6 right-6 z-50 flex bg-charcoal border border-white/10 rounded-full p-1 shadow-2xl">
+        <button
+          onClick={() => setViewMode('canvas')}
+          className={`px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest transition-all ${viewMode === 'canvas' ? 'bg-white text-obsidian font-bold' : 'text-white/40 hover:text-white'}`}
+        >
+          Canvas
+        </button>
+        <button
+          onClick={() => setViewMode('graph')}
+          className={`px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest transition-all ${viewMode === 'graph' ? 'bg-white text-obsidian font-bold' : 'text-white/40 hover:text-white'}`}
+        >
+          Mind Map
+        </button>
+      </div>
+
       {/* Floating Toggle Button for when Sidebar is closed */}
       {!isSidebarOpen && (
         <button
@@ -91,11 +123,26 @@ function App() {
         </div>
       </div>
 
-      <main className="flex-1 h-full overflow-hidden">
-        <PeptideCanvas
+      <main className="flex-1 h-full overflow-hidden relative">
+        {viewMode === 'canvas' ? (
+          <PeptideCanvas
+            peptide={selectedPeptide}
+            aiData={aiData}
+            aiLoading={aiLoading}
+          />
+        ) : (
+          <PeptideGraph
+            peptides={peptides}
+            onSelectPeptide={handleSelectPeptide}
+          />
+        )}
+
+        <PeptideDetailsPanel
           peptide={selectedPeptide}
-          aiData={aiData}
-          aiLoading={aiLoading}
+          analysisData={analysisData}
+          loading={analysisLoading}
+          isOpen={isDetailPanelOpen}
+          onClose={() => setIsDetailPanelOpen(false)}
         />
       </main>
     </div>
