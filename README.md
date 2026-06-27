@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="web_client/public/logo.png" width="200" alt="Peptide Design Lab Logo">
+  <img src="web_client/public/logo.png" width="400" alt="Peptide Design Lab Logo">
 </p>
 
 # 🧬 Peptide Design Lab
