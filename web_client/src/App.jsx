@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
-import WikiView from './components/WikiView';
 import PeptideDetailsPanel from './components/PeptideDetailsPanel';
 import { fetchPeptides, predictPeptideProperties, analyzePeptide } from './peptideService';
 
@@ -109,8 +108,7 @@ function App() {
         <div className="flex bg-neutral-950 border border-white/5 rounded-full p-1 shadow-inner">
           {[
             { id: 'canvas', label: '01. Canvas' },
-            { id: 'graph', label: '02. Mind Map' },
-            { id: 'wiki', label: '03. Research Wiki' }
+            { id: 'graph', label: '02. Mind Map' }
           ].map((mode) => (
             <button
               key={mode.id}
@@ -150,17 +148,10 @@ function App() {
             aiData={aiData}
             aiLoading={aiLoading}
           />
-        ) : viewMode === 'graph' ? (
+        ) : (
           <PeptideGraph
             peptides={peptides}
             onSelectPeptide={handleSelectPeptide}
-          />
-        ) : (
-          <WikiView
-            peptide={selectedPeptide}
-            loading={false}
-            onSelectPeptide={handleSelectPeptide}
-            peptides={peptides}
           />
         )}
 
