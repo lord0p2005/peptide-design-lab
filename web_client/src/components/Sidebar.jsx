@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen, toggleSidebar }) => {
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col bg-charcoal">
       <div className="p-6">
         <button
           onClick={toggleSidebar}
@@ -26,7 +27,7 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
           <input
             type="text"
             placeholder="Search peptides..."
-            className="w-full bg-obsidian border border-white/20 rounded-none px-4 py-2 text-sm focus:outline-none focus:border-white transition-colors"
+            className="w-full bg-obsidian border border-white/20 rounded-none px-4 py-2 text-sm focus:outline-none focus:border-white transition-colors text-white"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
           />
@@ -34,9 +35,12 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {peptides.map((peptide) => (
-          <button
+        {peptides.map((peptide, index) => (
+          <motion.button
             key={peptide.id}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.02, duration: 0.5, ease: "easeOut" }}
             onClick={() => onSelectPeptide(peptide)}
             className={`w-full text-left p-6 border-b border-white/5 transition-all hover:bg-white/5 ${
               selectedPeptideId === peptide.id ? 'bg-white/10 border-r-2 border-r-white' : ''
@@ -69,7 +73,7 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
                 </p>
               </div>
             </div>
-          </button>
+          </motion.button>
         ))}
       </div>
     </div>
