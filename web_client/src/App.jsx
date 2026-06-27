@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
+import WikiView from './components/WikiView';
 import PeptideDetailsPanel from './components/PeptideDetailsPanel';
 import { fetchPeptides, predictPeptideProperties, analyzePeptide } from './peptideService';
 
@@ -13,7 +14,7 @@ function App() {
   const [aiLoading, setAiLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [viewMode, setViewMode] = useState('canvas'); // 'canvas' or 'graph'
+  const [viewMode, setViewMode] = useState('canvas'); // 'canvas', 'graph', or 'wiki'
   const [analysisData, setAnalysisData] = useState(null);
   const [analysisLoading, setAnalysisLoading] = useState(false);
   const [isDetailPanelOpen, setIsDetailPanelOpen] = useState(false);
@@ -31,7 +32,7 @@ function App() {
         setAiData(prediction.properties);
       }
       setAiLoading(false);
-    } else {
+    } else if (mode === 'graph') {
       setIsDetailPanelOpen(true);
       setAnalysisData(null);
       setAnalysisLoading(true);
@@ -82,36 +83,53 @@ function App() {
 
   return (
     <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans relative">
-      {/* View Switcher Toggle */}
-      <div className="absolute top-6 right-6 z-50 flex bg-charcoal border border-white/10 rounded-full p-1 shadow-2xl">
-        <button
-          onClick={() => setViewMode('canvas')}
-          className={`px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest transition-all ${viewMode === 'canvas' ? 'bg-white text-obsidian font-bold' : 'text-white/40 hover:text-white'}`}
-        >
-          Canvas
-        </button>
-        <button
-          onClick={() => setViewMode('graph')}
-          className={`px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest transition-all ${viewMode === 'graph' ? 'bg-white text-obsidian font-bold' : 'text-white/40 hover:text-white'}`}
-        >
-          Mind Map
-        </button>
-      </div>
+      {/* Elite Top Toggle Ribbon */}
+      <header className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 border-b border-white/5 bg-obsidian/80 backdrop-blur-xl">
+        <div className="flex items-center gap-6">
+           {!isSidebarOpen && (
+            <button
+              onClick={toggleSidebar}
+              className="p-2 text-white/50 hover:text-white transition-all"
+              title="Open Lab"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          )}
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
+            <div className="h-4 w-px bg-white/10 mx-2 hidden md:block"></div>
+            <h1 className="text-sm tracking-[0.4em] font-black text-white uppercase hidden sm:block">
+              Peptide Design Lab
+            </h1>
+          </div>
+        </div>
 
-      {/* Floating Toggle Button for when Sidebar is closed */}
-      {!isSidebarOpen && (
-        <button
-          onClick={toggleSidebar}
-          className="absolute top-6 left-6 z-50 p-3 text-white/50 hover:text-white transition-all flex items-center group"
-          title="Open Lab"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      )}
+        <div className="flex bg-neutral-950 border border-white/5 rounded-full p-1 shadow-inner">
+          {[
+            { id: 'canvas', label: '01. Canvas' },
+            { id: 'graph', label: '02. Mind Map' },
+            { id: 'wiki', label: '03. Research Wiki' }
+          ].map((mode) => (
+            <button
+              key={mode.id}
+              onClick={() => setViewMode(mode.id)}
+              className={`px-6 py-1.5 rounded-full text-[9px] uppercase tracking-[0.2em] transition-all duration-500 ease-out ${
+                viewMode === mode.id
+                  ? 'bg-white text-obsidian font-black shadow-[0_0_20px_rgba(255,255,255,0.2)]'
+                  : 'text-white/30 hover:text-white/60'
+              }`}
+            >
+              {mode.label}
+            </button>
+          ))}
+        </div>
 
-      <div className={`transition-all duration-300 ease-in-out h-full border-r border-white/10 bg-charcoal overflow-hidden shrink-0 ${isSidebarOpen ? 'w-full md:w-96' : 'w-0'}`}>
+        <div className="hidden md:block w-32" /> {/* Spacer for symmetry */}
+      </header>
+
+      <div className={`transition-all duration-300 ease-in-out h-full border-r border-white/10 bg-charcoal overflow-hidden shrink-0 pt-16 ${isSidebarOpen ? 'w-full md:w-96' : 'w-0'}`}>
         <div className="w-full md:w-96 h-full">
           <Sidebar
             peptides={filteredPeptides}
@@ -125,17 +143,24 @@ function App() {
         </div>
       </div>
 
-      <main className="flex-1 h-full overflow-hidden relative">
+      <main className="flex-1 h-full overflow-hidden relative pt-16">
         {viewMode === 'canvas' ? (
           <PeptideCanvas
             peptide={selectedPeptide}
             aiData={aiData}
             aiLoading={aiLoading}
           />
-        ) : (
+        ) : viewMode === 'graph' ? (
           <PeptideGraph
             peptides={peptides}
             onSelectPeptide={handleSelectPeptide}
+          />
+        ) : (
+          <WikiView
+            peptide={selectedPeptide}
+            loading={false}
+            onSelectPeptide={handleSelectPeptide}
+            peptides={peptides}
           />
         )}
 

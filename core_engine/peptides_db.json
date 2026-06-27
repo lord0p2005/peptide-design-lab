@@ -14,7 +14,20 @@
       "clinical_use": "Accelerates wound healing, skin rejuvenation, and exhibits anti-inflammatory properties.",
       "reported_side_effects": "Generally none topically; potential flushing or localized irritation if concentration is excessively high.",
       "chemical_formula": "C14H24N6O4Cu",
-      "category": "Tissue-Repair & Angiogenic Modulators"
+      "category": "Tissue-Repair & Angiogenic Modulators",
+      "wiki_content": {
+        "summary": "A naturally occurring copper complex of the tripeptide glycyl-L-histidyl-L-lysine. It has high affinity for copper(II) and was first isolated from human plasma.",
+        "mechanism": "Activates copper-dependent enzymes and modulates gene expression related to tissue repair. It promotes collagen and elastin synthesis while acting as a potent antioxidant and anti-inflammatory agent.",
+        "effects": [
+          "Accelerates dermal and bone wound healing.",
+          "Stimulates angiogenesis and nerve outgrowth.",
+          "Improves skin elasticity and reduces fine lines."
+        ],
+        "synergies": [
+          "BPC-157",
+          "Zinc"
+        ]
+      }
     },
     {
       "id": "argireline",
@@ -63,7 +76,20 @@
       "molecular_target": "Upregulation of Growth Factor signaling (VEGFR2) and collagen synthesis pathways.",
       "clinical_use": "Body Protection Compound-157 is widely researched for its regenerative properties in tendon, muscle, and ligament healing, as well as its protective effects on the gastric mucosa.",
       "reported_side_effects": "Few reported side effects in research settings; long-term human safety profiles are still under investigation.",
-      "chemical_formula": "C62H98N16O22"
+      "chemical_formula": "C62H98N16O22",
+      "wiki_content": {
+        "summary": "A pentadecapeptide derived from human gastric juice, recognized for its exceptional cytoprotective and regenerative capabilities.",
+        "mechanism": "Upregulates VEGFR2 expression and stimulates the formation of new blood vessels (angiogenesis). It also promotes the outgrowth of tendon fibroblasts and increases collagen deposition at injury sites.",
+        "effects": [
+          "Heals ligament, tendon, and muscle tears.",
+          "Protects the gut lining and reverses NSAID-induced damage.",
+          "Neuroprotective effects on brain and peripheral nerves."
+        ],
+        "synergies": [
+          "TB-500",
+          "GHK-Cu"
+        ]
+      }
     },
     {
       "id": "epitalon",
@@ -82,7 +108,20 @@
       "molecular_target": "Telomerase enzyme activation and Pineal gland chromatin regulation.",
       "clinical_use": "A synthetic tetrapeptide known for its ability to activate telomerase and regulate melatonin production. It is studied for its anti-aging and life-extension potential.",
       "reported_side_effects": "No significant adverse effects reported in primary clinical trials; continues to be evaluated for long-term safety.",
-      "chemical_formula": "C14H22N4O9"
+      "chemical_formula": "C14H22N4O9",
+      "wiki_content": {
+        "summary": "A synthetic tetrapeptide (Ala-Glu-Asp-Gly) based on a natural peptide (epithalamin) produced in the pineal gland.",
+        "mechanism": "Acts as a telomerase activator, elongating telomeres in somatic cells. It regulates melatonin secretion and restores pineal gland sensitivity to hormonal signals.",
+        "effects": [
+          "Extends cellular lifespan and reduces age-related pathologies.",
+          "Normalizes circadian rhythms and sleep patterns.",
+          "Demonstrates potent anti-tumor and antioxidant activity."
+        ],
+        "synergies": [
+          "Thymulin",
+          "Melatonin"
+        ]
+      }
     },
     {
       "id": "mots-c",
@@ -113,7 +152,20 @@
       "molecular_target": "Mitochondria-nuclear signaling and AMPK-dependent metabolic activation.",
       "clinical_use": "Mitochondria-derived peptide that regulates metabolic homeostasis, insulin sensitivity, and exercise capacity. It acts as a signaling molecule for mitochondrial-nuclear communication.",
       "reported_side_effects": "Data on human side effects is limited; primarily investigated in preclinical metabolic models.",
-      "chemical_formula": "C101H152N28O22S2"
+      "chemical_formula": "C101H152N28O22S2",
+      "wiki_content": {
+        "summary": "A 16-amino-acid peptide encoded by the mitochondrial 12S rRNA gene, acting as a metabolic regulator.",
+        "mechanism": "Translocates to the nucleus during metabolic stress and regulates nuclear gene expression. It activates the AMPK pathway and improves mitochondrial function.",
+        "effects": [
+          "Enhances insulin sensitivity and glucose metabolism.",
+          "Increases exercise capacity and physical performance.",
+          "Promotes healthy aging and longevity."
+        ],
+        "synergies": [
+          "AOD9604",
+          "GW501516"
+        ]
+      }
     },
     {
       "id": "semax",
@@ -135,7 +187,53 @@
       "molecular_target": "Melanocortin receptors (MC4R) and BDNF signaling modulation.",
       "clinical_use": "Nootropic peptide used for cognitive enhancement, neuroprotection, and recovery from ischemic stroke. It modulates the expression of Brain-Derived Neurotrophic Factor (BDNF).",
       "reported_side_effects": "Generally well-tolerated. Rare instances of mild irritation of the nasal mucosa (if administered via spray).",
-      "chemical_formula": "C37H51N9O10S"
+      "chemical_formula": "C37H51N9O10S",
+      "wiki_content": {
+        "summary": "A synthetic heptapeptide analog of the ACTH (4-10) fragment, developed for its profound neurotrophic and nootropic properties without hormonal activity.",
+        "mechanism": "Triggers rapid up-regulation of Brain-Derived Neurotrophic Factor (BDNF) and its high-affinity receptor, TrkB, within the hippocampus. Enhances long-term potentiation ($LTP$) and stabilizes neurotrophin mRNA during hypoxia.",
+        "effects": [
+          "Pronounced increase in working memory and cognitive endurance.",
+          "Neuroprotective buffer against ischemic stroke and metabolic stress."
+        ],
+        "synergies": [
+          "Selank",
+          "Noopept"
+        ]
+      }
+    },
+    {
+      "id": "selank",
+      "name": "Selank",
+      "category": "Neuro-Regenerative & Nootropic Agents",
+      "sequence": "TKPRPGP",
+      "market_trend": "Anxiolytic & Cognitive Stability",
+      "sequence_three_letter": [
+        "Thr",
+        "Lys",
+        "Pro",
+        "Arg",
+        "Pro",
+        "Gly",
+        "Pro"
+      ],
+      "sequence_one_letter": "TKPRPGP",
+      "molecular_target": "Modulates GABAergic neurotransmission and BDNF expression.",
+      "clinical_use": "Designed for its potent anxiolytic and cognitive-enhancing effects. Used for generalized anxiety disorder and to improve focus.",
+      "reported_side_effects": "Well-tolerated; very low incidence of side effects.",
+      "chemical_formula": "C33H57N11O9",
+      "wiki_content": {
+        "summary": "A synthetic heptapeptide analog of the immunomodulatory peptide tuftsin, designed for its potent anxiolytic and cognitive-enhancing effects.",
+        "mechanism": "Modulates GABAergic neurotransmission and influences the expression of Brain-Derived Neurotrophic Factor (BDNF). It also affects the metabolism of serotonin and norepinephrine.",
+        "effects": [
+          "Reduces anxiety and emotional tension without sedation.",
+          "Enhances memory consolidation and focus.",
+          "Exhibits immunomodulatory properties during stress."
+        ],
+        "synergies": [
+          "Semax",
+          "Noopept"
+        ]
+      }
     },
     {
       "id": "ipamorelin",
@@ -155,7 +253,20 @@
       "molecular_target": "Selective Ghrelin receptor (GHS-R1a) agonist.",
       "clinical_use": "Selective growth hormone secretagogue and ghrelin receptor agonist. Used to stimulate GH release without significantly affecting cortisol or prolactin levels.",
       "reported_side_effects": "May include flushing, headache, or slight water retention at high dosages.",
-      "chemical_formula": "C38H49N9O5"
+      "chemical_formula": "C38H49N9O5",
+      "wiki_content": {
+        "summary": "A selective growth hormone secretagogue and ghrelin receptor agonist.",
+        "mechanism": "Mimics ghrelin and binds to the ghrelin receptor (GHS-R1a) in the pituitary gland, stimulating the release of growth hormone.",
+        "effects": [
+          "Increases lean muscle mass and strength.",
+          "Promotes fat loss and improved metabolism.",
+          "Enhances recovery and sleep quality."
+        ],
+        "synergies": [
+          "CJC-1295",
+          "Tesamorelin"
+        ]
+      }
     },
     {
       "id": "thymosin-alpha-1",
@@ -198,7 +309,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Thymalfasin is a polypeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C129H215N33O55"
+      "chemical_formula": "C129H215N33O55",
+      "wiki_content": {
+        "summary": "Thymalfasin is a polypeptide.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "tesamorelin",
@@ -256,14 +376,23 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C149H246N44O42S"
+      "chemical_formula": "C149H246N44O42S",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "ghrp-2",
       "name": "GHRP-2",
       "category": "Secretagogues & Somatotropic Analogues",
       "sequence": "AXAWFK",
-      "description": "Pralmorelin is an oligopeptide.",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-Ala",
@@ -275,9 +404,18 @@
       ],
       "sequence_one_letter": "AXAWFK",
       "molecular_target": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Pralmorelin is an oligopeptide.",
+      "clinical_use": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C45H55N9O6"
+      "chemical_formula": "C45H55N9O6",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Secretagogues & Somatotropic Analogues.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "ghrp-6",
@@ -359,7 +497,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C119H204N34O32S2"
+      "chemical_formula": "C119H204N34O32S2",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "kisspeptin-10",
@@ -384,7 +531,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C63H83N17O14"
+      "chemical_formula": "C63H83N17O14",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "dsip",
@@ -408,7 +564,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "Unknown"
+      "chemical_formula": "C35H48N10O15",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "aod9604",
@@ -439,7 +604,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C78H123N23O23S2"
+      "chemical_formula": "C78H123N23O23S2",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "oxytocin",
@@ -463,7 +637,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Neuro-Regenerative & Nootropic Agents pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Oxytocin is a cyclic nonapeptide hormone with amino acid sequence CYIQNCPLG that also acts as a neurotransmitter in the brain; the principal uterine-contracting and milk-ejecting hormone of the poster...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C43H66N12O12S2"
+      "chemical_formula": "C43H66N12O12S2",
+      "wiki_content": {
+        "summary": "Oxytocin is a cyclic nonapeptide hormone with amino acid sequence CYIQNCPLG that also acts as a neurotransmitter in the brain; the principal uterine-contracting and milk-ejecting hormone of the poster...",
+        "mechanism": "Primary sequence evaluated for selective binding within Neuro-Regenerative & Nootropic Agents pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Neuro-Regenerative & Nootropic Agents.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "vasopressin",
@@ -487,7 +670,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Argipressin is the predominant form of mammalian vasopressin (antidiuretic hormone). It is a nonapeptide containing an arginine at residue 8 and two disulfide-linked cysteines at residues of 1 and 6. ...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C46H65N15O12S2"
+      "chemical_formula": "C46H65N15O12S2",
+      "wiki_content": {
+        "summary": "Argipressin is the predominant form of mammalian vasopressin (antidiuretic hormone). It is a nonapeptide containing an arginine at residue 8 and two disulfide-linked cysteines at residues of 1 and 6. ...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "gonadorelin",
@@ -512,7 +704,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Gonadorelin is a ten-membered synthetic oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, glycyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It has ...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C55H75N17O13"
+      "chemical_formula": "C55H75N17O13",
+      "wiki_content": {
+        "summary": "Gonadorelin is a ten-membered synthetic oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, glycyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It has ...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "triptorelin",
@@ -537,7 +738,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Triptorelin is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-tryptophyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It is an agonist analog...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C64H82N18O13"
+      "chemical_formula": "C64H82N18O13",
+      "wiki_content": {
+        "summary": "Triptorelin is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-tryptophyl, leucyl, arginyl, prolyl and glycinamide residues joined in sequence. It is an agonist analog...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "leuprolide",
@@ -562,7 +772,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Leuprolide is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-leucyl, leucyl, arginyl, and N-ethylprolinamide residues joined in sequence. It is a synthetic nonapeptid...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C59H84N16O12"
+      "chemical_formula": "C59H84N16O12",
+      "wiki_content": {
+        "summary": "Leuprolide is an oligopeptide comprising pyroglutamyl, histidyl, tryptophyl, seryl, tyrosyl, D-leucyl, leucyl, arginyl, and N-ethylprolinamide residues joined in sequence. It is a synthetic nonapeptid...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "octreotide",
@@ -585,7 +804,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C49H66N10O10S2"
+      "chemical_formula": "C49H66N10O10S2",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "teriparatide",
@@ -634,7 +862,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Teriparatide can cause cancer according to state or federal government labeling requirements.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C181H291N55O51S2"
+      "chemical_formula": "C181H291N55O51S2",
+      "wiki_content": {
+        "summary": "Teriparatide can cause cancer according to state or federal government labeling requirements.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "exenatide",
@@ -688,7 +925,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C184H282N50O60S"
+      "chemical_formula": "C184H282N50O60S",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "liraglutide",
@@ -736,7 +982,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Neuro-Regenerative & Nootropic Agents pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Liraglutide is a lipopeptide that is an analogue of human GLP-1 in which the lysine residue at position 27 is replaced by arginine and a hexadecanoyl group attached to the remaining lysine via a gluta...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C172H265N43O51"
+      "chemical_formula": "C172H265N43O51",
+      "wiki_content": {
+        "summary": "Liraglutide is a lipopeptide that is an analogue of human GLP-1 in which the lysine residue at position 27 is replaced by arginine and a hexadecanoyl group attached to the remaining lysine via a gluta...",
+        "mechanism": "Primary sequence evaluated for selective binding within Neuro-Regenerative & Nootropic Agents pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Neuro-Regenerative & Nootropic Agents.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "afamelanotide",
@@ -764,14 +1019,23 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C78H111N21O19"
+      "chemical_formula": "C78H111N21O19",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "bivalirudin",
       "name": "Bivalirudin",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "FPRPGGGGNGDFEEIPEEYL",
-      "description": "Bivalirudin is a synthetic peptide of 20 amino acids, comprising D-Phe, Pro, Arg, Pro, Gly, Gly, Gly, Gly, Asn, Gly, Asp, Phe, Glu, Glu, Ile, Pro, Glu, Glu, Tyr, and Leu in sequence. A congener of hirudin (a naturally occurring drug found in the saliva of the medicinal leech), it a specific and reve...",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-Phe",
@@ -797,9 +1061,18 @@
       ],
       "sequence_one_letter": "FPRPGGGGNGDFEEIPEEYL",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Bivalirudin is a synthetic peptide of 20 amino acids, comprising D-Phe, Pro, Arg, Pro, Gly, Gly, Gly, Gly, Asn, Gly, Asp, Phe, Glu, Glu, Ile, Pro, Glu, Glu, Tyr, and Leu in sequence. A congener of hir...",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C98H138N24O33"
+      "chemical_formula": "C98H138N24O33",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "calcitonin",
@@ -846,14 +1119,23 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C151H226N40O45S3"
+      "chemical_formula": "C151H226N40O45S3",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "cetrorelix",
       "name": "Cetrorelix",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "XXXSYXLRPA",
-      "description": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L-leucyl, L-arginyl, L-prolyl, and D-alaninamide residues coupled in sequence. A gonadotrophin-releas...",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-2Nal",
@@ -869,9 +1151,18 @@
       ],
       "sequence_one_letter": "XXXSYXLRPA",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L...",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "Unknown"
+      "chemical_formula": "C70H92ClN17O14",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "desmopressin",
@@ -896,7 +1187,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Desmopressin is a synthetic analogue of vasopressin in which 3-mercaptopropionic acid replaces the cysteine residue at position 1 and D-arginine replaces the residue at position 8. An antidiuretic, it...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C46H64N14O12S2"
+      "chemical_formula": "C46H64N14O12S2",
+      "wiki_content": {
+        "summary": "Desmopressin is a synthetic analogue of vasopressin in which 3-mercaptopropionic acid replaces the cysteine residue at position 1 and D-arginine replaces the residue at position 8. An antidiuretic, it...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "elcatonin",
@@ -942,7 +1242,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C148H244N42O47"
+      "chemical_formula": "C148H244N42O47",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "enfuvirtide",
@@ -993,7 +1302,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C204H301N51O64"
+      "chemical_formula": "C204H301N51O64",
+      "wiki_content": {
+        "summary": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "eptifibatide",
@@ -1016,7 +1334,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Eptifibatide is a synthetic homodetic cyclic peptide comprising Nalpha-(3-sulfanylpropanoyl)homoarginyl, glycyl, aspartyl, tryptophyl, prolyl and cysteinamide residues connected in sequence and cyclis...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C35H49N11O9S2"
+      "chemical_formula": "C35H49N11O9S2",
+      "wiki_content": {
+        "summary": "Eptifibatide is a synthetic homodetic cyclic peptide comprising Nalpha-(3-sulfanylpropanoyl)homoarginyl, glycyl, aspartyl, tryptophyl, prolyl and cysteinamide residues connected in sequence and cyclis...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "glucagon",
@@ -1223,14 +1550,23 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C130H219N43O42"
+      "chemical_formula": "Unknown",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "sincalide",
       "name": "Sincalide",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "DXMGWMDF",
-      "description": "Sincalide is an oligopeptide.",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "Asp",
@@ -1245,9 +1581,18 @@
       ],
       "sequence_one_letter": "DXMGWMDF",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Sincalide is an oligopeptide.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C49H62N10O16S3"
+      "chemical_formula": "C49H62N10O16S3",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "somatostatin",
@@ -1276,7 +1621,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Somatostatin is a fourteen-membered heterodetic cyclic peptide comprising the sequence Ala-Gly-Cys-Lys-Asn-Phe-Phe-Trp-Lys-Thr-Phe-Thr-Ser-Cys cyclised by a disulfide bridge between the two Cys residu...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C76H104N18O19S2"
+      "chemical_formula": "C76H104N18O19S2",
+      "wiki_content": {
+        "summary": "Somatostatin is a fourteen-membered heterodetic cyclic peptide comprising the sequence Ala-Gly-Cys-Lys-Asn-Phe-Phe-Trp-Lys-Thr-Phe-Thr-Ser-Cys cyclised by a disulfide bridge between the two Cys residu...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "teduglutide",
@@ -1324,7 +1678,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Teduglutide is a 33-membered polypeptide consisting of His, Gly, Asp, Gly, Ser, Phe, Ser, Asp, Glu, Met, Asn, Thr, Ile, Leu, Asp, Asn, Leu, Ala, Ala, Arg, Asp, Phe, Ile, Asn, Trp, Leu, Ile, Gln, Thr, ...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C164H252N44O55S"
+      "chemical_formula": "C164H252N44O55S",
+      "wiki_content": {
+        "summary": "Teduglutide is a 33-membered polypeptide consisting of His, Gly, Asp, Gly, Ser, Phe, Ser, Asp, Glu, Met, Asn, Thr, Ile, Leu, Asp, Asn, Leu, Ala, Ala, Arg, Asp, Phe, Ile, Asn, Trp, Leu, Ile, Gln, Thr, ...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "thymopentin",
@@ -1344,7 +1707,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Thymopentin is an oligopeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C30H49N9O9"
+      "chemical_formula": "C30H49N9O9",
+      "wiki_content": {
+        "summary": "Thymopentin is an oligopeptide.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "tb-500",
@@ -1363,10 +1735,19 @@
         "Gln"
       ],
       "sequence_one_letter": "LKKTETQ",
-      "molecular_target": "Identified via PubChem CID 62707662",
+      "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "Unknown"
+      "chemical_formula": "C38H68N10O14",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "hexarelin",
@@ -1412,7 +1793,16 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C56H78N16O12"
+      "chemical_formula": "C56H78N16O12",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     },
     {
       "id": "aviptadil",
@@ -1477,7 +1867,83 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Bremelanotide is an oligopeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C50H68N14O10"
+      "chemical_formula": "C50H68N14O10",
+      "wiki_content": {
+        "summary": "Bremelanotide is an oligopeptide.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
+    },
+    {
+      "id": "thymosin-beta-4",
+      "name": "Thymosin Beta-4",
+      "category": "Experimental & Unclassified Bioactives",
+      "sequence": "SDKPDMAEXEKFDKSKLKKXEXQEKNPLPSKEXXEQEKQAGES",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [
+        "Ser",
+        "Asp",
+        "Lys",
+        "Pro",
+        "Asp",
+        "Met",
+        "Ala",
+        "Glu",
+        "xiIle",
+        "Glu",
+        "Lys",
+        "Phe",
+        "Asp",
+        "Lys",
+        "Ser",
+        "Lys",
+        "Leu",
+        "Lys",
+        "Lys",
+        "xiThr",
+        "Glu",
+        "xiThr",
+        "Gln",
+        "Glu",
+        "Lys",
+        "Asn",
+        "Pro",
+        "Leu",
+        "Pro",
+        "Ser",
+        "Lys",
+        "Glu",
+        "xiThr",
+        "xiIle",
+        "Glu",
+        "Gln",
+        "Glu",
+        "Lys",
+        "Gln",
+        "Ala",
+        "Gly",
+        "Glu",
+        "Ser"
+      ],
+      "sequence_one_letter": "SDKPDMAEXEKFDKSKLKKXEXQEKNPLPSKEXXEQEKQAGES",
+      "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
+      "chemical_formula": "C212H350N56O78S",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      }
     }
   ]
 }
