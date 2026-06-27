@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
 import PeptideDetailsPanel from './components/PeptideDetailsPanel';
+import PeptideLoader from './components/PeptideLoader';
 import { fetchPeptides, predictPeptideProperties, analyzePeptide } from './peptideService';
 
 function App() {
@@ -71,11 +72,7 @@ function App() {
   );
 
   if (loading) {
-    return (
-      <div className="h-screen w-screen bg-obsidian flex items-center justify-center">
-        <div className="text-white text-xs uppercase tracking-[0.5em] animate-pulse">Initializing Lab...</div>
-      </div>
-    );
+    return <PeptideLoader />;
   }
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
