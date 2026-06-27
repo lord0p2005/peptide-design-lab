@@ -1,10 +1,45 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const CATEGORY_DISPLAY_NAMES = {
+  "Neuro-Regenerative & Nootropic Agents": "Neuro-Modulation",
+  "Tissue-Repair & Angiogenic Modulators": "Tissue Repair",
+  "Metabolic & Mitochondrial Homeostasis Regulators": "Metabolic",
+  "Secretagogues & Somatotropic Analogues": "Secretagogues",
+  "Cosmeceutical & Epicutaneous Actives": "Cosmeceutical",
+  "Experimental & Unclassified Bioactives": "Experimental"
+};
 
 const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen, toggleSidebar }) => {
+  const [collapsedCategories, setCollapsedCategories] = useState({});
+
+  // Auto-expand categories when searching
+  const isSearching = searchTerm.trim().length > 0;
+
+  const toggleCategory = (category) => {
+    setCollapsedCategories(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
+  };
+
+  // Group peptides by category
+  const groupedPeptides = peptides.reduce((acc, peptide) => {
+    const cat = peptide.category || "Experimental & Unclassified Bioactives";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(peptide);
+    return acc;
+  }, {});
+
+  const categories = Object.keys(groupedPeptides).sort((a, b) => {
+    const nameA = CATEGORY_DISPLAY_NAMES[a] || a;
+    const nameB = CATEGORY_DISPLAY_NAMES[b] || b;
+    return nameA.localeCompare(nameB);
+  });
+
   return (
-    <div className="h-full flex flex-col bg-charcoal">
-      <div className="p-6">
+    <div className="h-full flex flex-col bg-charcoal border-r border-white/5">
+      <div className="p-6 border-b border-white/5">
         <button
           onClick={toggleSidebar}
           className="flex items-center gap-3 text-white hover:text-white/70 transition-colors group mb-6"
@@ -18,7 +53,7 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
           </svg>
-          <h1 className="text-xl font-bold tracking-tighter uppercase">
+          <h1 className="text-xl font-bold tracking-tighter uppercase italic">
             Peptide Lab
           </h1>
         </button>
@@ -26,55 +61,96 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
         <div className="relative">
           <input
             type="text"
-            placeholder="Search peptides..."
-            className="w-full bg-obsidian border border-white/20 rounded-none px-4 py-2 text-sm focus:outline-none focus:border-white transition-colors text-white"
+            placeholder="Search sequences..."
+            className="w-full bg-obsidian border border-white/10 rounded-none px-4 py-2.5 text-[11px] uppercase tracking-widest focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/20"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto">
-        {peptides.map((peptide, index) => (
-          <motion.button
-            key={peptide.id}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.02, duration: 0.5, ease: "easeOut" }}
-            onClick={() => onSelectPeptide(peptide)}
-            className={`w-full text-left p-6 border-b border-white/5 transition-all hover:bg-white/5 ${
-              selectedPeptideId === peptide.id ? 'bg-white/10 border-r-2 border-r-white' : ''
-            }`}
-          >
-            <div className="flex justify-between items-start mb-1">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">
-                {peptide.name}
-              </h3>
-              <span className="px-1.5 py-0.5 bg-white/5 text-[9px] uppercase tracking-tighter text-white/60">
-                {peptide.sequence_one_letter.length} AA
-              </span>
-            </div>
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        {categories.map((category) => {
+          const isCollapsed = collapsedCategories[category] && !isSearching;
+          const displayCategory = CATEGORY_DISPLAY_NAMES[category] || category;
+          const categoryPeptides = groupedPeptides[category];
 
-            <p className="text-[10px] uppercase tracking-widest text-white/40 mb-3">
-              {peptide.market_trend}
-            </p>
+          return (
+            <div key={category} className="border-b border-white/5">
+              <button
+                onClick={() => toggleCategory(category)}
+                className="w-full flex items-center gap-3 p-4 bg-white/2 hover:bg-white/5 transition-colors text-left"
+              >
+                <motion.div
+                  animate={{ rotate: isCollapsed ? 0 : 90 }}
+                  className="text-white/30"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.div>
 
-            <div className="space-y-3">
-              <div>
-                <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 mb-1">Clinical Use</p>
-                <p className="text-[11px] leading-tight text-white/70 line-clamp-2 italic">
-                  {peptide.clinical_use}
-                </p>
-              </div>
-              <div>
-                <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 mb-1">Reported Side Effects</p>
-                <p className="text-[11px] leading-tight text-white/60 line-clamp-2">
-                  {peptide.reported_side_effects}
-                </p>
-              </div>
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-amber-500/80" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                  </svg>
+                  <h3 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">
+                    {displayCategory}
+                  </h3>
+                </div>
+
+                <span className="ml-auto text-[9px] font-mono text-white/20">
+                  {categoryPeptides.length}
+                </span>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {!isCollapsed && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
+                    className="overflow-hidden bg-obsidian/30"
+                  >
+                    {categoryPeptides.map((peptide) => (
+                      <button
+                        key={peptide.id}
+                        onClick={() => onSelectPeptide(peptide)}
+                        className={`w-full text-left pl-12 pr-6 py-4 border-l-2 transition-all hover:bg-white/5 group relative ${
+                          selectedPeptideId === peptide.id
+                            ? 'bg-white/10 border-l-white'
+                            : 'border-l-transparent'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" className={`h-4 w-4 transition-colors ${selectedPeptideId === peptide.id ? 'text-white' : 'text-white/20 group-hover:text-white/40'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <div>
+                            <h4 className={`text-[12px] font-bold uppercase tracking-wider transition-colors ${selectedPeptideId === peptide.id ? 'text-white' : 'text-white/60'}`}>
+                              {peptide.name}
+                            </h4>
+                            <p className="text-[9px] uppercase tracking-widest text-white/30 mt-0.5">
+                              {peptide.sequence_one_letter.length} Residues
+                            </p>
+                          </div>
+                        </div>
+
+                        {selectedPeptideId === peptide.id && (
+                          <motion.div
+                            layoutId="activePointer"
+                            className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white"
+                          />
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </motion.button>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

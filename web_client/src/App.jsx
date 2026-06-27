@@ -69,7 +69,9 @@ function App() {
 
   const filteredPeptides = peptides.filter(p =>
     p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.id.toLowerCase().includes(searchTerm.toLowerCase())
+    p.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (p.category && p.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (p.sequence_one_letter && p.sequence_one_letter.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   if (loading) {
