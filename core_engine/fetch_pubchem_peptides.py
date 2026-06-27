@@ -39,37 +39,121 @@ def enrich_biomedical_text(peptide_obj):
         "Semax": {
             "clinical_use": "Nootropic peptide used for cognitive enhancement, neuroprotection, and recovery from ischemic stroke. It modulates the expression of Brain-Derived Neurotrophic Factor (BDNF).",
             "side_effects": "Generally well-tolerated. Rare instances of mild irritation of the nasal mucosa (if administered via spray).",
-            "molecular_target": "Melanocortin receptors (MC4R) and BDNF signaling modulation."
+            "molecular_target": "Melanocortin receptors (MC4R) and BDNF signaling modulation.",
+            "wiki_content": {
+                "summary": "A synthetic heptapeptide analog of the ACTH (4-10) fragment, developed for its profound neurotrophic and nootropic properties without hormonal activity.",
+                "mechanism": "Triggers rapid up-regulation of Brain-Derived Neurotrophic Factor (BDNF) and its high-affinity receptor, TrkB, within the hippocampus. Enhances long-term potentiation ($LTP$) and stabilizes neurotrophin mRNA during hypoxia.",
+                "effects": [
+                    "Pronounced increase in working memory and cognitive endurance.",
+                    "Neuroprotective buffer against ischemic stroke and metabolic stress."
+                ],
+                "synergies": ["Selank", "Noopept"]
+            }
         },
         "BPC-157": {
             "clinical_use": "Body Protection Compound-157 is widely researched for its regenerative properties in tendon, muscle, and ligament healing, as well as its protective effects on the gastric mucosa.",
             "side_effects": "Few reported side effects in research settings; long-term human safety profiles are still under investigation.",
-            "molecular_target": "Upregulation of Growth Factor signaling (VEGFR2) and collagen synthesis pathways."
+            "molecular_target": "Upregulation of Growth Factor signaling (VEGFR2) and collagen synthesis pathways.",
+            "wiki_content": {
+                "summary": "A pentadecapeptide derived from human gastric juice, recognized for its exceptional cytoprotective and regenerative capabilities.",
+                "mechanism": "Upregulates VEGFR2 expression and stimulates the formation of new blood vessels (angiogenesis). It also promotes the outgrowth of tendon fibroblasts and increases collagen deposition at injury sites.",
+                "effects": [
+                    "Heals ligament, tendon, and muscle tears.",
+                    "Protects the gut lining and reverses NSAID-induced damage.",
+                    "Neuroprotective effects on brain and peripheral nerves."
+                ],
+                "synergies": ["TB-500", "GHK-Cu"]
+            }
         },
         "MOTS-c": {
             "clinical_use": "Mitochondria-derived peptide that regulates metabolic homeostasis, insulin sensitivity, and exercise capacity. It acts as a signaling molecule for mitochondrial-nuclear communication.",
             "side_effects": "Data on human side effects is limited; primarily investigated in preclinical metabolic models.",
-            "molecular_target": "Mitochondria-nuclear signaling and AMPK-dependent metabolic activation."
+            "molecular_target": "Mitochondria-nuclear signaling and AMPK-dependent metabolic activation.",
+            "wiki_content": {
+                "summary": "A 16-amino-acid peptide encoded by the mitochondrial 12S rRNA gene, acting as a metabolic regulator.",
+                "mechanism": "Translocates to the nucleus during metabolic stress and regulates nuclear gene expression. It activates the AMPK pathway and improves mitochondrial function.",
+                "effects": [
+                    "Enhances insulin sensitivity and glucose metabolism.",
+                    "Increases exercise capacity and physical performance.",
+                    "Promotes healthy aging and longevity."
+                ],
+                "synergies": ["AOD9604", "GW501516"]
+            }
         },
         "Epitalon": {
             "clinical_use": "A synthetic tetrapeptide known for its ability to activate telomerase and regulate melatonin production. It is studied for its anti-aging and life-extension potential.",
             "side_effects": "No significant adverse effects reported in primary clinical trials; continues to be evaluated for long-term safety.",
-            "molecular_target": "Telomerase enzyme activation and Pineal gland chromatin regulation."
+            "molecular_target": "Telomerase enzyme activation and Pineal gland chromatin regulation.",
+            "wiki_content": {
+                "summary": "A synthetic tetrapeptide (Ala-Glu-Asp-Gly) based on a natural peptide (epithalamin) produced in the pineal gland.",
+                "mechanism": "Acts as a telomerase activator, elongating telomeres in somatic cells. It regulates melatonin secretion and restores pineal gland sensitivity to hormonal signals.",
+                "effects": [
+                    "Extends cellular lifespan and reduces age-related pathologies.",
+                    "Normalizes circadian rhythms and sleep patterns.",
+                    "Demonstrates potent anti-tumor and antioxidant activity."
+                ],
+                "synergies": ["Thymulin", "Melatonin"]
+            }
         },
         "GHK-Cu": {
             "clinical_use": "Copper-binding peptide with strong regenerative, anti-inflammatory, and antioxidant properties. Widely used in cosmeceuticals for skin rejuvenation and wound healing.",
             "side_effects": "Extremely low toxicity; potential for minor skin irritation in sensitive individuals when used topically.",
-            "molecular_target": "Copper-dependent cellular remodeling and Matrix Metalloproteinase (MMP) regulation."
+            "molecular_target": "Copper-dependent cellular remodeling and Matrix Metalloproteinase (MMP) regulation.",
+            "wiki_content": {
+                "summary": "A naturally occurring copper complex of the tripeptide glycyl-L-histidyl-L-lysine. It has high affinity for copper(II) and was first isolated from human plasma.",
+                "mechanism": "Activates copper-dependent enzymes and modulates gene expression related to tissue repair. It promotes collagen and elastin synthesis while acting as a potent antioxidant and anti-inflammatory agent.",
+                "effects": [
+                    "Accelerates dermal and bone wound healing.",
+                    "Stimulates angiogenesis and nerve outgrowth.",
+                    "Improves skin elasticity and reduces fine lines."
+                ],
+                "synergies": ["BPC-157", "Zinc"]
+            }
         },
         "Ipamorelin": {
             "clinical_use": "Selective growth hormone secretagogue and ghrelin receptor agonist. Used to stimulate GH release without significantly affecting cortisol or prolactin levels.",
             "side_effects": "May include flushing, headache, or slight water retention at high dosages.",
-            "molecular_target": "Selective Ghrelin receptor (GHS-R1a) agonist."
+            "molecular_target": "Selective Ghrelin receptor (GHS-R1a) agonist.",
+            "wiki_content": {
+                "summary": "A selective growth hormone secretagogue and ghrelin receptor agonist.",
+                "mechanism": "Mimics ghrelin and binds to the ghrelin receptor (GHS-R1a) in the pituitary gland, stimulating the release of growth hormone.",
+                "effects": [
+                    "Increases lean muscle mass and strength.",
+                    "Promotes fat loss and improved metabolism.",
+                    "Enhances recovery and sleep quality."
+                ],
+                "synergies": ["CJC-1295", "Tesamorelin"]
+            }
         },
         "Selank": {
             "clinical_use": "Anxiolytic peptide with nootropic properties. It mimics the effects of tuftsin but with added stability, aiding in stress reduction and cognitive function.",
             "side_effects": "Well-tolerated with a high safety margin; no reported withdrawal or dependency issues.",
-            "molecular_target": "GABAergic system modulation and Enkephalinase inhibition."
+            "molecular_target": "GABAergic system modulation and Enkephalinase inhibition.",
+            "wiki_content": {
+                "summary": "A synthetic heptapeptide analog of the immunomodulatory peptide tuftsin, designed for its potent anxiolytic and cognitive-enhancing effects.",
+                "mechanism": "Modulates GABAergic neurotransmission and influences the expression of Brain-Derived Neurotrophic Factor (BDNF). It also affects the metabolism of serotonin and norepinephrine.",
+                "effects": [
+                    "Reduces anxiety and emotional tension without sedation.",
+                    "Enhances memory consolidation and focus.",
+                    "Exhibits immunomodulatory properties during stress."
+                ],
+                "synergies": ["Semax", "Noopept"]
+            }
+        },
+        "Argireline": {
+            "clinical_use": "Topical reduction of expression wrinkle depth caused by repetitive muscle movement.",
+            "side_effects": "Exceedingly low toxicity profile; mild skin dryness or peeling in sensitive individuals if overused.",
+            "molecular_target": "Mimics the N-terminal end of the SNAP-25 protein; competitively inhibits the SNARE complex formation.",
+            "wiki_content": {
+                "summary": "A synthetic hexapeptide (Acetyl Hexapeptide-8) used in anti-aging cosmetics.",
+                "mechanism": "Mimics the N-terminal end of the SNAP-25 protein and competes for a position in the SNARE complex, thereby modulating the release of neurotransmitters (acetylcholine) and relaxing facial muscles.",
+                "effects": [
+                    "Reduces the depth of wrinkles caused by facial muscle contractions.",
+                    "Provides a non-invasive alternative to Botulinum Toxin.",
+                    "Improves skin smoothness and hydration."
+                ],
+                "synergies": ["Matrixyl", "Hyaluronic Acid"]
+            }
         }
     }
 
@@ -77,6 +161,7 @@ def enrich_biomedical_text(peptide_obj):
         peptide_obj["clinical_use"] = lookup[name]["clinical_use"]
         peptide_obj["reported_side_effects"] = lookup[name]["side_effects"]
         peptide_obj["molecular_target"] = lookup[name]["molecular_target"]
+        peptide_obj["wiki_content"] = lookup[name]["wiki_content"]
     else:
         # Automated template generator for other molecules
         clinical_placeholder = "No clinical description available" in peptide_obj["clinical_use"] or not peptide_obj["clinical_use"]
@@ -102,6 +187,17 @@ def enrich_biomedical_text(peptide_obj):
                 f"Primary sequence evaluated for selective binding within {category} pathways. "
                 "Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis."
             )
+
+        # Automated Wiki Content Generation for all other peptides
+        peptide_obj["wiki_content"] = {
+            "summary": peptide_obj["clinical_use"],
+            "mechanism": peptide_obj["molecular_target"],
+            "effects": [
+                "Evaluated for potential therapeutic applications in " + peptide_obj.get("category", "biomedical research") + ".",
+                "Maintains structural integrity and metabolic signaling in molecular models."
+            ],
+            "synergies": []
+        }
 
     return peptide_obj
 

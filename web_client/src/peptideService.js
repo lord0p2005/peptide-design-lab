@@ -1,19 +1,32 @@
-import peptides from './data/peptides.json';
-
 const API_BASE = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? 'http://localhost:8000'
   : 'https://glassofwine-peptide-design-lab-api.hf.space';
 
 /**
- * Simulates an asynchronous fetch of peptide data.
- * This can be easily swapped with a real API call later.
+ * Fetches peptide data from the SSOT API.
  */
 export const fetchPeptides = async () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(peptides);
-    }, 500); // Simulate network latency
-  });
+    try {
+        const response = await fetch(`${API_BASE}/peptides`);
+        if (!response.ok) throw new Error('Peptide Database Offline');
+        return await response.json();
+    } catch (error) {
+        console.warn("Using fallback local data:", error);
+        // Fallback to local import if API is unavailable
+        const localData = await import('./data/peptides.json');
+        return localData.default;
+    }
+};
+
+export const fetchPeptideById = async (id) => {
+    try {
+        const response = await fetch(`${API_BASE}/peptides/${id}`);
+        if (!response.ok) throw new Error('Peptide Details Unavailable');
+        return await response.json();
+    } catch (error) {
+        console.warn("Finding peptide in local cache:", error);
+        return null;
+    }
 };
 
 /**

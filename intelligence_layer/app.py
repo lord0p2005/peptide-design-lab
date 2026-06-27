@@ -4,6 +4,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
 import re
+import json
+import os
 
 app = FastAPI(title="Peptide Intelligence API")
 
@@ -42,6 +44,20 @@ PKA_VALUES = {
     'N-term': 9.69, 'C-term': 2.34,
     'R': 12.48, 'D': 3.86, 'C': 8.33, 'E': 4.25, 'H': 6.00, 'K': 10.53, 'Y': 10.07
 }
+
+# Unified Peptide Database (SSOT)
+PEPTIDE_DB_PATH = os.path.join(os.path.dirname(__file__), "../core_engine/enriched_peptides.json")
+PEPTIDE_DB = []
+
+def load_peptide_db():
+    global PEPTIDE_DB
+    if os.path.exists(PEPTIDE_DB_PATH):
+        with open(PEPTIDE_DB_PATH, 'r') as f:
+            PEPTIDE_DB = json.load(f)
+    else:
+        print(f"Warning: Peptide database not found at {PEPTIDE_DB_PATH}")
+
+load_peptide_db()
 
 # Chemical formulas for residues
 AMINO_ACID_FORMULAS = {
@@ -144,7 +160,20 @@ def calculate_net_charge(sequence, ph=7.0):
 
 @app.get("/")
 def read_root():
-    return {"message": "Peptide Intelligence API is running", "model": model_name}
+    return {"message": "Peptide Intelligence API is running", "model": model_name, "peptides_loaded": len(PEPTIDE_DB)}
+
+@app.get("/peptides")
+def get_all_peptides():
+    """Returns the index list for sidebars and top-level mindmap arrays."""
+    return PEPTIDE_DB
+
+@app.get("/peptides/{peptide_id}")
+def get_peptide_details(peptide_id: str):
+    """Fetches full deep wiki data and metrics for an individual entry."""
+    for peptide in PEPTIDE_DB:
+        if peptide["id"].lower() == peptide_id.lower():
+            return peptide
+    raise HTTPException(status_code=404, detail="Peptide profile not found in database.")
 
 @app.post("/predict")
 def predict(request: PeptideRequest):
