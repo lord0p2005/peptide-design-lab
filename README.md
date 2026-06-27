@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="web_client/public/logo.png" width="400" alt="Peptide Design Lab Logo">
+</p>
+
 # 🧬 Peptide Design Lab
 
 An advanced, end-to-end biomedical platform for the discovery, visualization, and AI-driven enrichment of bioactive peptides. This monorepo integrates a high-performance React frontend, a FastAPI-based AI intelligence layer, and an automated data processing pipeline.
@@ -14,8 +18,8 @@ The **Peptide Design Lab** is structured into three primary modules:
 
 ### 1. 🖥️ Web Client (`/web_client`)
 A minimalist, 'editorial' style dashboard designed for high-impact scientific visualization.
+- **Dual-View Interface:** Seamlessly toggle between the **Interconnected Mindmap** (spatial relationships) and the **Academic Research Wiki** (dense scientific documentation).
 - **Interactive Peptide Canvas:** High-contrast visualization of amino acid sequences and genetic mapping (mRNA, Coding DNA, Template DNA).
-- **Smart Workspace:** Searchable repository of enriched clinical data with a universally collapsible interface.
 - **Real-time AI Integration:** Dynamic fetching of biophysical property predictions.
 
 ### 2. 🧠 Intelligence Layer (`/intelligence_layer`)
