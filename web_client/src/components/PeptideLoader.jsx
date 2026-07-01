@@ -1,13 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 export default function PeptideLoader() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-obsidian overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+      <div
         className="relative"
       >
         <svg className="w-64 h-64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -66,43 +62,29 @@ export default function PeptideLoader() {
 
         {/* Orbiting particles */}
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <div
             key={i}
-            className="absolute top-1/2 left-1/2 w-1 h-1 bg-white/20 rounded-full"
-            animate={{
-              rotate: 360,
-              x: [100, 120, 100],
-              y: [0, 20, 0],
-              opacity: [0, 1, 0]
+            className="absolute top-1/2 left-1/2 w-1 h-1 bg-white/20 rounded-full animate-pulse"
+            style={{
+              animationDelay: `${i * 0.5}s`,
+              transform: `rotate(${i * 120}deg) translateX(80px)`
             }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "linear",
-              delay: i * 1.5
-            }}
-            style={{ originX: "-50px", originY: "-50px" }}
           />
         ))}
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
+      <div
         className="flex flex-col items-center"
       >
         <h2 className="mt-8 font-sans text-[10px] tracking-[0.5em] text-white/30 uppercase">
           Initializing Pipeline
         </h2>
         <div className="mt-4 w-32 h-[1px] bg-white/5 relative overflow-hidden">
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"
           />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

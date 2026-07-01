@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const CATEGORY_DISPLAY_NAMES = {
   "Neuro-Regenerative & Nootropic Agents": "Neuro-Modulation",
@@ -11,13 +10,13 @@ const CATEGORY_DISPLAY_NAMES = {
 };
 
 const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen, toggleSidebar }) => {
-  const [collapsedCategories, setCollapsedCategories] = useState({});
+  const [expandedCategories, setExpandedCategories] = useState({});
 
   // Auto-expand categories when searching
   const isSearching = searchTerm.trim().length > 0;
 
   const toggleCategory = (category) => {
-    setCollapsedCategories(prev => ({
+    setExpandedCategories(prev => ({
       ...prev,
       [category]: !prev[category]
     }));
@@ -71,7 +70,7 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
 
       <div className="flex-1 overflow-y-auto custom-scrollbar">
         {categories.map((category) => {
-          const isCollapsed = collapsedCategories[category] && !isSearching;
+          const isExpanded = expandedCategories[category] || isSearching;
           const displayCategory = CATEGORY_DISPLAY_NAMES[category] || category;
           const categoryPeptides = groupedPeptides[category];
 
@@ -81,14 +80,13 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
                 onClick={() => toggleCategory(category)}
                 className="w-full flex items-center gap-3 p-4 bg-white/2 hover:bg-white/5 transition-colors text-left"
               >
-                <motion.div
-                  animate={{ rotate: isCollapsed ? 0 : 90 }}
-                  className="text-white/30"
+                <div
+                  className={`text-white/30 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                   </svg>
-                </motion.div>
+                </div>
 
                 <div className="flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-amber-500/80" fill="currentColor" viewBox="0 0 20 20">
@@ -104,15 +102,7 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
                 </span>
               </button>
 
-              <AnimatePresence initial={false}>
-                {!isCollapsed && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
-                    className="overflow-hidden bg-obsidian/30"
-                  >
+              <div className={`${isExpanded ? 'block' : 'hidden'} bg-obsidian/30`}>
                     {categoryPeptides.map((peptide) => (
                       <button
                         key={peptide.id}
@@ -138,16 +128,13 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
                         </div>
 
                         {selectedPeptideId === peptide.id && (
-                          <motion.div
-                            layoutId="activePointer"
+                          <div
                             className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white"
                           />
                         )}
                       </button>
                     ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </div>
             </div>
           );
         })}

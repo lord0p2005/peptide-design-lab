@@ -1,6 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
-import { motion } from 'framer-motion';
 
 const PeptideGraph = ({ peptides, onSelectPeptide }) => {
   const CATEGORIES = {
@@ -86,10 +85,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
   }, [peptides, onSelectPeptide]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 1.1 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+    <div
       className="w-full h-full bg-obsidian relative"
     >
       <div className="absolute top-12 left-12 z-10">
@@ -173,7 +169,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

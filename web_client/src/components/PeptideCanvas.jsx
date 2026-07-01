@@ -1,17 +1,14 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
   if (!peptide) {
     return (
       <div className="flex-1 h-screen flex items-center justify-center bg-obsidian">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <p
           className="text-white/10 uppercase tracking-[0.5em] text-[10px]"
         >
           Select a sequence to initiate visualization
-        </motion.p>
+        </p>
       </div>
     );
   }
@@ -23,32 +20,14 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
   const blockWidth = "w-20";
   const labelWidth = "w-32";
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.19, 1, 0.22, 1] } }
-  };
-
   return (
     <div className="flex-1 h-screen overflow-y-auto bg-obsidian p-8 md:p-20 custom-scrollbar">
-      <motion.div
+      <div
         key={peptide.id}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
         className="max-w-6xl mx-auto pt-12"
       >
         <header className="mb-24">
-          <motion.div variants={itemVariants} className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
             <div className="flex-1">
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Sequence Specification</p>
               <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] max-w-3xl">
@@ -59,9 +38,9 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-2">Primary Application</p>
               <p className="text-sm font-bold text-white tracking-tight uppercase">{peptide.market_trend}</p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12">
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Therapeutic Profile</p>
               <p className="text-base leading-relaxed text-white/70 italic font-light">{peptide.clinical_use}</p>
@@ -70,10 +49,10 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Side Effects & Risk</p>
               <p className="text-base leading-relaxed text-white/70 font-light">{peptide.reported_side_effects}</p>
             </div>
-          </motion.div>
+          </div>
         </header>
 
-        <motion.section variants={itemVariants} className="mb-24">
+        <section className="mb-24">
           <div className="flex justify-between items-center mb-12">
             <p className="text-[10px] uppercase tracking-[0.4em] text-white/40">Genetic Mapping</p>
             {peptide.chemical_formula && (
@@ -90,11 +69,8 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
                 <div className={`${labelWidth} text-[9px] uppercase tracking-[0.3em] text-white/30 shrink-0`}>Polypeptide Chain</div>
                 <div className="flex gap-6">
                   {peptide.sequence_three_letter.map((aa, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ scale: 0.5, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.5 + index * 0.05, type: "spring", stiffness: 200 }}
                       className={`${blockWidth} flex flex-col items-center relative shrink-0`}
                     >
                       <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-charcoal hover:border-white transition-all duration-300 shadow-xl">
@@ -106,7 +82,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
                       {index < peptide.sequence_three_letter.length - 1 && (
                         <div className="absolute top-7 -right-8 w-10 h-[1px] bg-white/10" />
                       )}
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -143,9 +119,9 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section variants={itemVariants} className="mb-24">
+        <section className="mb-24">
           <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-10">AI Biophysical Profiling (ESM-2)</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -163,26 +139,25 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
                   {prop.unit && <span className="text-[10px] text-white/20 font-mono">{prop.unit}</span>}
                 </div>
                 {prop.label === "Serum Stability" && !aiLoading && prop.value && (
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${prop.value}%` }}
-                    className="absolute bottom-0 left-0 h-1 bg-emerald-500/30"
+                  <div
+                    style={{ width: `${prop.value}%` }}
+                    className="absolute bottom-0 left-0 h-1 bg-emerald-500/30 transition-[width] duration-1000 ease-out"
                   />
                 )}
               </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section variants={itemVariants} className="pb-20">
+        <section className="pb-20">
           <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">Molecular Mechanism</p>
           <div className="bg-charcoal border border-white/5 p-10 border-l-4 border-l-white/20 shadow-2xl">
             <p className="text-xl leading-relaxed text-white/90 font-light italic tracking-tight">
               "{peptide.molecular_target}"
             </p>
           </div>
-        </motion.section>
-      </motion.div>
+        </section>
+      </div>
 
       <style jsx>{`
         .custom-scrollbar::-webkit-scrollbar {
