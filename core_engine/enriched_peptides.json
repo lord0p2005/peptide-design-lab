@@ -31,6 +31,19 @@
       "mrna": "GGC CAC AAG UGA",
       "coding_dna": "GGC CAC AAG TGA",
       "template_dna": "CCG GTG TTC ACT"
+    },
+    "administration_profile": {
+      "preferred_route": "Subcutaneous Injection",
+      "half_life_index": "Medium",
+      "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+      "optimized_routes": [
+        {
+          "route": "Subcutaneous",
+          "viability_score": 0.9,
+          "rationale": "Standard parenteral route.",
+          "required_modifications": []
+        }
+      ]
     }
   },
   {
@@ -810,7 +823,7 @@
     "name": "Melanotan II",
     "category": "Experimental & Unclassified Bioactives",
     "sequence": "XDHFRWK",
-    "description": "No clinical description available via PubChem.",
+    "description": "Melanotan II is an organic molecular entity.",
     "market_trend": "Automated Retrieval / Research Grade",
     "sequence_three_letter": [
       "Nle",
@@ -823,11 +836,11 @@
     ],
     "sequence_one_letter": "XDHFRWK",
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-    "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+    "clinical_use": "Melanotan II is an organic molecular entity.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C50H69N15O9",
     "wiki_content": {
-      "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "summary": "Melanotan II is an organic molecular entity.",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "effects": [
         "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
@@ -907,7 +920,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "Unknown",
+    "chemical_formula": "C119H204N34O32S2",
     "wiki_content": {
       "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -2122,7 +2135,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "C148H244N42O47",
+    "chemical_formula": "Unknown",
     "wiki_content": {
       "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -2164,7 +2177,7 @@
     "name": "Enfuvirtide",
     "category": "Experimental & Unclassified Bioactives",
     "sequence": "YTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWF",
-    "description": "No clinical description available via PubChem.",
+    "description": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminyl, asparaginyl, glutaminyl, glutaminyl, alpha-glutamyl, lysyl, asparaginyl, alpha-glutamyl, alpha-gl...",
     "market_trend": "Automated Retrieval / Research Grade",
     "sequence_three_letter": [
       "Tyr",
@@ -2206,11 +2219,11 @@
     ],
     "sequence_one_letter": "YTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWF",
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-    "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+    "clinical_use": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
     "chemical_formula": "C204H301N51O64",
     "wiki_content": {
-      "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "summary": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "effects": [
         "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
@@ -2940,7 +2953,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "Unknown",
+    "chemical_formula": "C38H68N10O14",
     "wiki_content": {
       "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -3004,7 +3017,7 @@
     "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
     "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
     "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-    "chemical_formula": "C47H58N12O6",
+    "chemical_formula": "Unknown",
     "wiki_content": {
       "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
