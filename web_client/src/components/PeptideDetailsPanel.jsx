@@ -47,6 +47,59 @@ const PeptideDetailsPanel = ({ peptide, analysisData, loading, isOpen, onClose }
                 </div>
               </section>
 
+              {/* Delivery & Administration Profile */}
+              <section className="animate-in fade-in slide-in-from-right-6 duration-600">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Delivery & Administration Profile</p>
+                <div className="bg-obsidian border border-white/5 p-6 space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <p className="text-[9px] uppercase tracking-widest text-white/30">Primary Route</p>
+                      <p className="text-xs font-bold text-emerald-400 uppercase">
+                        {analysisData?.metadata?.administration_profile?.preferred_route || peptide.administration_profile?.preferred_route || 'N/A'}
+                      </p>
+                    </div>
+                    <div className="space-y-1 text-right">
+                      <p className="text-[9px] uppercase tracking-widest text-white/30">Clearance Class</p>
+                      <p className="text-xs font-bold text-white uppercase tracking-tighter">
+                        {analysisData?.metadata?.administration_profile?.half_life_index || peptide.administration_profile?.half_life_index || 'N/A'} Half-Life
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <p className="text-[9px] uppercase tracking-widest text-white/30">Route Viability Matrices</p>
+                    <div className="space-y-3">
+                      {(analysisData?.metadata?.administration_profile?.optimized_routes || peptide.administration_profile?.optimized_routes || []).map((route, i) => (
+                        <div key={i} className="space-y-1">
+                          <div className="flex justify-between items-center text-[10px]">
+                            <span className="text-white/60 uppercase tracking-wider">{route.route}</span>
+                            <span className="font-mono text-white">{(route.viability_score * 100).toFixed(0)}%</span>
+                          </div>
+                          <div className="h-1 bg-white/5 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-400/50 transition-all duration-1000"
+                              style={{ width: `${route.viability_score * 100}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/5">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl">🛡️</span>
+                      <div className="space-y-1">
+                        <p className="text-[9px] uppercase tracking-widest text-white/30">Structural Rationale</p>
+                        <p className="text-[10px] text-white/60 leading-relaxed italic">
+                          "{analysisData?.metadata?.administration_profile?.rationale || peptide.administration_profile?.rationale}"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               {/* Physiochemical Radar (Stats) */}
               <section className="animate-in fade-in slide-in-from-right-8 duration-700">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">Physiochemical Profile</p>

@@ -12,7 +12,8 @@ AA_MAP = {
     'Gln': 'Q', 'Glu': 'E', 'Gly': 'G', 'His': 'H', 'Ile': 'I',
     'Leu': 'L', 'Lys': 'K', 'Met': 'M', 'Phe': 'F', 'Pro': 'P',
     'Ser': 'S', 'Thr': 'T', 'Trp': 'W', 'Tyr': 'Y', 'Val': 'V',
-    'Aib': 'X', 'D-Phe': 'X', 'D-2Nal': 'X', 'Nal': 'X', 'Ac': ''
+    'Aib': 'A', 'D-Ala': 'A', 'D-Phe': 'F', 'D-Trp': 'W', 'D-Tyr': 'Y',
+    'D-2Nal': 'F', 'Nal': 'F', 'Ac': '', 'Orn': 'K', 'Sar': 'G'
 }
 
 CATEGORIES = {
@@ -30,6 +31,67 @@ def classify_peptide(description, name):
             if kw.lower() in text:
                 return category
     return "Experimental & Unclassified Bioactives"
+
+def predict_administration_profile(peptide_obj):
+    sequence = peptide_obj.get("sequence", "")
+    length = len(sequence)
+    name = peptide_obj.get("name", "").lower()
+
+    # Defaults
+    preferred_route = "Subcutaneous Injection"
+    half_life_index = "Medium"
+    rationale = "Standard peptide pharmacokinetic profile requiring parenteral delivery."
+    optimized_routes = []
+
+    is_short = 0 < length < 10
+    is_long = length > 30
+    is_lipidated = any(x in name for x in ["liraglutide", "semaglutide", "tirzepatide", "detemir", "degludec"])
+    is_cyclic = "cys" in str(peptide_obj.get("sequence_three_letter", [])).lower() or any(x in name for x in ["octreotide", "eptifibatide", "oxytocin", "vasopressin", "cyclosporine"])
+
+    if is_lipidated:
+        preferred_route = "Subcutaneous (SC)"
+        half_life_index = "Long"
+        rationale = "Lipidated chain enhances albumin binding and extends serum stability."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.98, "rationale": "Optimized for slow systemic release via albumin binding.", "required_modifications": ["Fatty Acid Acylation"]},
+            {"route": "Intravenous", "viability_score": 0.60, "rationale": "Possible but bypasses depot effect of lipid chain.", "required_modifications": []}
+        ]
+    elif is_short:
+        preferred_route = "Subcutaneous (SC) / Nasal"
+        half_life_index = "Short"
+        rationale = "Low molecular weight allows for nasal permeability but high enzymatic vulnerability."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.92, "rationale": "Reliable systemic bioavailability.", "required_modifications": []},
+            {"route": "Nasal Spray", "viability_score": 0.65, "rationale": "High patient compliance; viable for short oligopeptides.", "required_modifications": ["Permeation Enhancers"]},
+            {"route": "Oral", "viability_score": 0.15, "rationale": "Poor stability without cyclization or protection.", "required_modifications": ["Structural Cyclization"]}
+        ]
+    elif is_long:
+        preferred_route = "Subcutaneous Injection / IV"
+        half_life_index = "Medium"
+        rationale = "High molecular mass and rapid renal clearance necessitate parenteral administration."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.94, "rationale": "Standard clinical route for long polypeptides.", "required_modifications": ["Depot Formatting"]},
+            {"route": "Intravenous", "viability_score": 0.85, "rationale": "Used for acute hospital settings.", "required_modifications": []}
+        ]
+    elif is_cyclic:
+        preferred_route = "Intravenous (IV) / IM"
+        half_life_index = "Medium"
+        rationale = "Cyclization provides elevated resistance to gastric proteases."
+        optimized_routes = [
+            {"route": "Intravenous", "viability_score": 0.95, "rationale": "Optimal for rapid systemic action.", "required_modifications": []},
+            {"route": "Oral", "viability_score": 0.45, "rationale": "Increased stability makes it a candidate for advanced oral systems.", "required_modifications": ["SNAC Carrier", "Permeation Enhancers"]}
+        ]
+    else:
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.90, "rationale": "Standard parenteral route.", "required_modifications": []}
+        ]
+
+    return {
+        "preferred_route": preferred_route,
+        "half_life_index": half_life_index,
+        "rationale": rationale,
+        "optimized_routes": optimized_routes
+    }
 
 def enrich_biomedical_text(peptide_obj):
     name = peptide_obj['name']
@@ -199,6 +261,7 @@ def enrich_biomedical_text(peptide_obj):
             "synergies": []
         }
 
+    peptide_obj["administration_profile"] = predict_administration_profile(peptide_obj)
     return peptide_obj
 
 def get_cid_by_name(name):
@@ -293,16 +356,26 @@ def fetch_peptide_data(name):
 
     three_letter_list = parse_three_letter_sequence(seq_three_str)
 
-    if not seq_one:
-        mapped = []
-        for aa in three_letter_list:
-            if aa in AA_MAP:
-                mapped.append(AA_MAP[aa])
-            elif aa.startswith('D-'):
-                mapped.append('X')
-            else:
-                mapped.append('X')
-        seq_one = "".join([m for m in mapped if m])
+    # Always try to generate a clean 1-letter sequence from 3-letter list to resolve 'X'
+    mapped = []
+    for aa in three_letter_list:
+        if aa in AA_MAP:
+            mapped.append(AA_MAP[aa])
+        elif aa.startswith('D-'):
+            # Fallback for other D-amino acids not in AA_MAP
+            base_aa = aa[2:]
+            mapped.append(AA_MAP.get(base_aa, 'X'))
+        else:
+            mapped.append('X')
+
+    clean_mapped_seq = "".join([m for m in mapped if m])
+
+    # Use the mapped sequence if the original has 'X' or is missing
+    if not seq_one or 'X' in seq_one:
+        if clean_mapped_seq and 'X' not in clean_mapped_seq:
+            seq_one = clean_mapped_seq
+        elif not seq_one:
+            seq_one = clean_mapped_seq
 
     category = classify_peptide(description, name)
 

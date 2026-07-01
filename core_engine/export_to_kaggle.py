@@ -22,6 +22,7 @@ def export_to_csv():
     headers = [
         "id", "name", "category", "market_trend", "sequence", "molecular_target",
         "clinical_use", "reported_side_effects", "chemical_formula",
+        "preferred_route", "half_life_index",
         "mrna_sequence", "coding_dna", "template_dna"
     ]
 
@@ -40,6 +41,8 @@ def export_to_csv():
                 "clinical_use": p.get("clinical_use"),
                 "reported_side_effects": p.get("reported_side_effects"),
                 "chemical_formula": p.get("chemical_formula"),
+                "preferred_route": p.get("administration_profile", {}).get("preferred_route"),
+                "half_life_index": p.get("administration_profile", {}).get("half_life_index"),
                 "mrna_sequence": p.get("genetic_mapping", {}).get("mrna"),
                 "coding_dna": p.get("genetic_mapping", {}).get("coding_dna"),
                 "template_dna": p.get("genetic_mapping", {}).get("template_dna")
