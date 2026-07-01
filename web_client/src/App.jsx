@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
@@ -61,7 +60,7 @@ function App() {
       } catch (error) {
         console.error("Failed to fetch peptides:", error);
       } finally {
-        setTimeout(() => setLoading(false), 1500); // Give loader some time to shine
+        setLoading(false);
       }
     };
     loadData();
@@ -85,9 +84,7 @@ function App() {
 
       {/* Minimalist Floating Sidebar Trigger */}
       {!isSidebarOpen && (
-        <motion.button
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+        <button
           onClick={toggleSidebar}
           className="fixed top-6 left-6 z-50 p-3 bg-charcoal/80 backdrop-blur-md border border-white/10 rounded-full text-white/50 hover:text-white hover:border-white/20 transition-all shadow-2xl"
           title="Open Lab"
@@ -95,7 +92,7 @@ function App() {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </motion.button>
+        </button>
       )}
 
       {/* Floating View Toggle */}
@@ -107,28 +104,19 @@ function App() {
           <button
             key={mode.id}
             onClick={() => setViewMode(mode.id)}
-            className={`relative px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500 ease-out ${
-              viewMode === mode.id ? 'text-obsidian font-black' : 'text-white/40 hover:text-white/60'
+            className={`relative px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-200 ${
+              viewMode === mode.id ? 'bg-white text-obsidian font-black' : 'text-white/40 hover:text-white/60'
             }`}
           >
             <span className="relative z-10">{mode.label}</span>
-            {viewMode === mode.id && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 bg-white rounded-full"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
           </button>
         ))}
       </div>
 
-      {/* Sidebar with Motion */}
-      <motion.div
-        initial={false}
-        animate={{ width: isSidebarOpen ? (window.innerWidth < 768 ? '100%' : '384px') : '0px' }}
-        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-        className="h-full border-r border-white/5 bg-charcoal overflow-hidden shrink-0 z-40 relative"
+      {/* Sidebar */}
+      <div
+        style={{ width: isSidebarOpen ? (window.innerWidth < 768 ? '100%' : '384px') : '0px' }}
+        className="h-full border-r border-white/5 bg-charcoal overflow-hidden shrink-0 z-40 relative transition-[width] duration-300 ease-in-out"
       >
         <div className="w-full md:w-96 h-full">
           <Sidebar
@@ -141,32 +129,23 @@ function App() {
             toggleSidebar={toggleSidebar}
           />
         </div>
-      </motion.div>
+      </div>
 
       <main className="flex-1 h-full overflow-hidden relative">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={viewMode}
-            initial={{ opacity: 0, scale: 0.98, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, scale: 1.02, filter: 'blur(10px)' }}
-            transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
-            className="h-full w-full"
-          >
-            {viewMode === 'canvas' ? (
-              <PeptideCanvas
-                peptide={selectedPeptide}
-                aiData={aiData}
-                aiLoading={aiLoading}
-              />
-            ) : (
-              <PeptideGraph
-                peptides={peptides}
-                onSelectPeptide={handleSelectPeptide}
-              />
-            )}
-          </motion.div>
-        </AnimatePresence>
+        <div className="h-full w-full">
+          {viewMode === 'canvas' ? (
+            <PeptideCanvas
+              peptide={selectedPeptide}
+              aiData={aiData}
+              aiLoading={aiLoading}
+            />
+          ) : (
+            <PeptideGraph
+              peptides={peptides}
+              onSelectPeptide={handleSelectPeptide}
+            />
+          )}
+        </div>
 
         <PeptideDetailsPanel
           peptide={selectedPeptide}
