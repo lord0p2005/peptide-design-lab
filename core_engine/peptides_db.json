@@ -31,22 +31,59 @@
     },
     {
       "id": "argireline",
-      "name": "Argireline (Acetyl Hexapeptide-8)",
-      "market_trend": "Topical Cosmetic Actives / 'Botox Alternative'",
-      "sequence_three_letter": [
-        "Glu",
-        "Glu",
-        "Met",
-        "Gln",
-        "Arg",
-        "Arg"
-      ],
-      "sequence_one_letter": "EEMQRR",
-      "molecular_target": "Mimics the N-terminal end of the SNAP-25 protein; competitively inhibits the SNARE complex formation to destabilize vesicle release of acetylcholine.",
+      "name": "Argireline",
+      "category": "Cosmeceutical & Epicutaneous Actives",
+      "sequence": "EMQRR",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
+      "sequence_three_letter": [],
+      "sequence_one_letter": "EMQRR",
+      "molecular_target": "Mimics the N-terminal end of the SNAP-25 protein; competitively inhibits the SNARE complex formation.",
       "clinical_use": "Topical reduction of expression wrinkle depth caused by repetitive muscle movement.",
       "reported_side_effects": "Exceedingly low toxicity profile; mild skin dryness or peeling in sensitive individuals if overused.",
-      "chemical_formula": "C30H50N10O12S",
-      "category": "Cosmeceutical & Epicutaneous Actives"
+      "chemical_formula": "C35H62N14O11S",
+      "wiki_content": {
+        "summary": "A synthetic hexapeptide (Acetyl Hexapeptide-8) used in anti-aging cosmetics.",
+        "mechanism": "Mimics the N-terminal end of the SNAP-25 protein and competes for a position in the SNARE complex, thereby modulating the release of neurotransmitters (acetylcholine) and relaxing facial muscles.",
+        "effects": [
+          "Reduces the depth of wrinkles caused by facial muscle contractions.",
+          "Provides a non-invasive alternative to Botulinum Toxin.",
+          "Improves skin smoothness and hydration."
+        ],
+        "synergies": [
+          "Matrixyl",
+          "Hyaluronic Acid"
+        ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "bpc-157",
@@ -89,6 +126,19 @@
           "TB-500",
           "GHK-Cu"
         ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -120,6 +170,35 @@
         "synergies": [
           "Thymulin",
           "Melatonin"
+        ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
         ]
       }
     },
@@ -165,6 +244,19 @@
           "AOD9604",
           "GW501516"
         ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -199,6 +291,35 @@
           "Selank",
           "Noopept"
         ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -206,7 +327,8 @@
       "name": "Selank",
       "category": "Neuro-Regenerative & Nootropic Agents",
       "sequence": "TKPRPGP",
-      "market_trend": "Anxiolytic & Cognitive Stability",
+      "description": "No clinical description available via PubChem.",
+      "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "Thr",
         "Lys",
@@ -217,9 +339,9 @@
         "Pro"
       ],
       "sequence_one_letter": "TKPRPGP",
-      "molecular_target": "Modulates GABAergic neurotransmission and BDNF expression.",
-      "clinical_use": "Designed for its potent anxiolytic and cognitive-enhancing effects. Used for generalized anxiety disorder and to improve focus.",
-      "reported_side_effects": "Well-tolerated; very low incidence of side effects.",
+      "molecular_target": "GABAergic system modulation and Enkephalinase inhibition.",
+      "clinical_use": "Anxiolytic peptide with nootropic properties. It mimics the effects of tuftsin but with added stability, aiding in stress reduction and cognitive function.",
+      "reported_side_effects": "Well-tolerated with a high safety margin; no reported withdrawal or dependency issues.",
       "chemical_formula": "C33H57N11O9",
       "wiki_content": {
         "summary": "A synthetic heptapeptide analog of the immunomodulatory peptide tuftsin, designed for its potent anxiolytic and cognitive-enhancing effects.",
@@ -233,13 +355,42 @@
           "Semax",
           "Noopept"
         ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
       "id": "ipamorelin",
       "name": "Ipamorelin",
       "category": "Secretagogues & Somatotropic Analogues",
-      "sequence": "XHXFK",
+      "sequence": "AHFFK",
       "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
@@ -249,7 +400,7 @@
         "D-Phe",
         "Lys"
       ],
-      "sequence_one_letter": "XHXFK",
+      "sequence_one_letter": "AHFFK",
       "molecular_target": "Selective Ghrelin receptor (GHS-R1a) agonist.",
       "clinical_use": "Selective growth hormone secretagogue and ghrelin receptor agonist. Used to stimulate GH release without significantly affecting cortisol or prolactin levels.",
       "reported_side_effects": "May include flushing, headache, or slight water retention at high dosages.",
@@ -265,6 +416,35 @@
         "synergies": [
           "CJC-1295",
           "Tesamorelin"
+        ]
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
         ]
       }
     },
@@ -318,6 +498,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -332,7 +525,37 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "Unknown"
+      "chemical_formula": "C221H366N72O67S",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
+      }
     },
     {
       "id": "sermorelin",
@@ -385,14 +608,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
       "id": "ghrp-2",
       "name": "GHRP-2",
       "category": "Secretagogues & Somatotropic Analogues",
-      "sequence": "AXAWFK",
-      "description": "No clinical description available via PubChem.",
+      "sequence": "AFAWFK",
+      "description": "Pralmorelin is an oligopeptide.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-Ala",
@@ -402,19 +638,48 @@
         "D-Phe",
         "Lys"
       ],
-      "sequence_one_letter": "AXAWFK",
+      "sequence_one_letter": "AFAWFK",
       "molecular_target": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "clinical_use": "Pralmorelin is an oligopeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C45H55N9O6",
       "wiki_content": {
-        "summary": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "summary": "Pralmorelin is an oligopeptide.",
         "mechanism": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
         "effects": [
           "Evaluated for potential therapeutic applications in Secretagogues & Somatotropic Analogues.",
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -436,14 +701,52 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C46H56N12O6"
+      "chemical_formula": "C46H56N12O6",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Secretagogues & Somatotropic Analogues domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Secretagogues & Somatotropic Analogues pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Secretagogues & Somatotropic Analogues.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "melanotan-ii",
       "name": "Melanotan II",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "XDHFRWK",
-      "description": "Melanotan II is an organic molecular entity.",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "Nle",
@@ -456,9 +759,47 @@
       ],
       "sequence_one_letter": "XDHFRWK",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Melanotan II is an organic molecular entity.",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C50H69N15O9"
+      "chemical_formula": "C50H69N15O9",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "humanin",
@@ -497,7 +838,7 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C119H204N34O32S2",
+      "chemical_formula": "Unknown",
       "wiki_content": {
         "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -506,6 +847,28 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Intravenous (IV) / IM",
+        "half_life_index": "Medium",
+        "rationale": "Cyclization provides elevated resistance to gastric proteases.",
+        "optimized_routes": [
+          {
+            "route": "Intravenous",
+            "viability_score": 0.95,
+            "rationale": "Optimal for rapid systemic action.",
+            "required_modifications": []
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.45,
+            "rationale": "Increased stability makes it a candidate for advanced oral systems.",
+            "required_modifications": [
+              "SNAC Carrier",
+              "Permeation Enhancers"
+            ]
+          }
+        ]
       }
     },
     {
@@ -540,6 +903,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -573,6 +949,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -613,6 +1018,28 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Intravenous (IV) / IM",
+        "half_life_index": "Medium",
+        "rationale": "Cyclization provides elevated resistance to gastric proteases.",
+        "optimized_routes": [
+          {
+            "route": "Intravenous",
+            "viability_score": 0.95,
+            "rationale": "Optimal for rapid systemic action.",
+            "required_modifications": []
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.45,
+            "rationale": "Increased stability makes it a candidate for advanced oral systems.",
+            "required_modifications": [
+              "SNAC Carrier",
+              "Permeation Enhancers"
+            ]
+          }
+        ]
       }
     },
     {
@@ -646,6 +1073,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -679,6 +1135,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -713,6 +1198,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -747,6 +1245,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -781,6 +1292,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -813,6 +1353,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -871,6 +1440,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -934,6 +1524,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -991,6 +1602,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC)",
+        "half_life_index": "Long",
+        "rationale": "Lipidated chain enhances albumin binding and extends serum stability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.98,
+            "rationale": "Optimized for slow systemic release via albumin binding.",
+            "required_modifications": [
+              "Fatty Acid Acylation"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.6,
+            "rationale": "Possible but bypasses depot effect of lipid chain.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1028,6 +1660,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1035,7 +1680,7 @@
       "name": "Bivalirudin",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "FPRPGGGGNGDFEEIPEEYL",
-      "description": "No clinical description available via PubChem.",
+      "description": "Bivalirudin is a synthetic peptide of 20 amino acids, comprising D-Phe, Pro, Arg, Pro, Gly, Gly, Gly, Gly, Asn, Gly, Asp, Phe, Glu, Glu, Ile, Pro, Glu, Glu, Tyr, and Leu in sequence. A congener of hirudin (a naturally occurring drug found in the saliva of the medicinal leech), it a specific and reve...",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-Phe",
@@ -1061,17 +1706,30 @@
       ],
       "sequence_one_letter": "FPRPGGGGNGDFEEIPEEYL",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "clinical_use": "Bivalirudin is a synthetic peptide of 20 amino acids, comprising D-Phe, Pro, Arg, Pro, Gly, Gly, Gly, Gly, Asn, Gly, Asp, Phe, Glu, Glu, Ile, Pro, Glu, Glu, Tyr, and Leu in sequence. A congener of hir...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C98H138N24O33",
       "wiki_content": {
-        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "summary": "Bivalirudin is a synthetic peptide of 20 amino acids, comprising D-Phe, Pro, Arg, Pro, Gly, Gly, Gly, Gly, Asn, Gly, Asp, Phe, Glu, Glu, Ile, Pro, Glu, Glu, Tyr, and Leu in sequence. A congener of hir...",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
         "effects": [
           "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1128,6 +1786,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1135,7 +1814,7 @@
       "name": "Cetrorelix",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "XXXSYXLRPA",
-      "description": "No clinical description available via PubChem.",
+      "description": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L-leucyl, L-arginyl, L-prolyl, and D-alaninamide residues coupled in sequence. A gonadotrophin-releas...",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "D-2Nal",
@@ -1151,17 +1830,30 @@
       ],
       "sequence_one_letter": "XXXSYXLRPA",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "clinical_use": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C70H92ClN17O14",
       "wiki_content": {
-        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "summary": "Cetrorelix is a synthetic ten-membered oligopeptide comprising N-acetyl-3-(naphthalen-2-yl)-D-alanyl, 4-chloro-D-phenylalanyl, 3-(pyridin-3-yl)-D-alanyl, L-seryl, L-tyrosyl, N5-carbamoyl-D-ornithyl, L...",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
         "effects": [
           "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1196,6 +1888,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1251,6 +1972,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1258,7 +2000,7 @@
       "name": "Enfuvirtide",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "YTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWF",
-      "description": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminyl, asparaginyl, glutaminyl, glutaminyl, alpha-glutamyl, lysyl, asparaginyl, alpha-glutamyl, alpha-gl...",
+      "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "Tyr",
@@ -1300,17 +2042,38 @@
       ],
       "sequence_one_letter": "YTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWF",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
+      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C204H301N51O64",
       "wiki_content": {
-        "summary": "Enfuvirtide is a synthetic 36-amino acid peptide consisting of N-acetyltyrosyl, threonyl, seryl, leucyl, isoleucyl, histidyl, seryl, leucyl, isoleucyl, alpha-glutamyl, alpha-glutamyl, seryl, glutaminy...",
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
         "effects": [
           "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1343,6 +2106,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1387,13 +2179,35 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Glucagon is a 29-amino acid peptide hormone consisting of His, Ser, Gln, Gly, Thr, Phe, Thr, Ser, Asp, Tyr, Ser, Lys, Tyr, Leu, Asp, Ser, Arg, Arg, Ala, Gln, Asp, Phe, Val, Gln, Trp, Leu, Met, Asn and...",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C153H225N43O49S"
+      "chemical_formula": "C153H225N43O49S",
+      "wiki_content": {
+        "summary": "Glucagon is a 29-amino acid peptide hormone consisting of His, Ser, Gln, Gly, Thr, Phe, Thr, Ser, Asp, Tyr, Ser, Lys, Tyr, Leu, Asp, Ser, Arg, Arg, Ala, Gln, Asp, Phe, Val, Gln, Trp, Leu, Met, Asn and...",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
+      }
     },
     {
       "id": "insulin",
       "name": "Insulin",
       "category": "Metabolic & Mitochondrial Homeostasis Regulators",
-      "sequence": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXXSLYQLENYCN",
+      "sequence": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXCSLYQLENYCN",
       "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
@@ -1450,11 +2264,41 @@
         "Cys",
         "Asn"
       ],
-      "sequence_one_letter": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXXSLYQLENYCN",
+      "sequence_one_letter": "FVGXQHLCGSHLVEALYLVCGERGFFYXPKXGXVEQCCXSXCSLYQLENYCN",
       "molecular_target": "Primary sequence evaluated for selective binding within Metabolic & Mitochondrial Homeostasis Regulators pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Metabolic & Mitochondrial Homeostasis Regulators domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C256H381N65O77S6"
+      "chemical_formula": "C256H381N65O77S6",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Metabolic & Mitochondrial Homeostasis Regulators domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Metabolic & Mitochondrial Homeostasis Regulators pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Metabolic & Mitochondrial Homeostasis Regulators.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
+      }
     },
     {
       "id": "pramlintide",
@@ -1506,7 +2350,37 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Pramlintide is a polypeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C171H267N51O53S2"
+      "chemical_formula": "C171H267N51O53S2",
+      "wiki_content": {
+        "summary": "Pramlintide is a polypeptide.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
+      }
     },
     {
       "id": "secretin",
@@ -1550,7 +2424,7 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "Unknown",
+      "chemical_formula": "C130H219N43O42",
       "wiki_content": {
         "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -1559,6 +2433,19 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1566,7 +2453,7 @@
       "name": "Sincalide",
       "category": "Experimental & Unclassified Bioactives",
       "sequence": "DXMGWMDF",
-      "description": "No clinical description available via PubChem.",
+      "description": "Sincalide is an oligopeptide.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
         "Asp",
@@ -1581,17 +2468,46 @@
       ],
       "sequence_one_letter": "DXMGWMDF",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
-      "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+      "clinical_use": "Sincalide is an oligopeptide.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
       "chemical_formula": "C49H62N10O16S3",
       "wiki_content": {
-        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "summary": "Sincalide is an oligopeptide.",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
         "effects": [
           "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1630,6 +2546,28 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Intravenous (IV) / IM",
+        "half_life_index": "Medium",
+        "rationale": "Cyclization provides elevated resistance to gastric proteases.",
+        "optimized_routes": [
+          {
+            "route": "Intravenous",
+            "viability_score": 0.95,
+            "rationale": "Optimal for rapid systemic action.",
+            "required_modifications": []
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.45,
+            "rationale": "Increased stability makes it a candidate for advanced oral systems.",
+            "required_modifications": [
+              "SNAC Carrier",
+              "Permeation Enhancers"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1687,6 +2625,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     },
     {
@@ -1716,6 +2675,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1738,7 +2726,7 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C38H68N10O14",
+      "chemical_formula": "Unknown",
       "wiki_content": {
         "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
         "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
@@ -1747,13 +2735,42 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
       "id": "hexarelin",
       "name": "Hexarelin",
       "category": "Experimental & Unclassified Bioactives",
-      "sequence": "HXAWFK",
+      "sequence": "HWAWFK",
       "description": "No clinical description available via PubChem.",
       "market_trend": "Automated Retrieval / Research Grade",
       "sequence_three_letter": [
@@ -1764,11 +2781,49 @@
         "D-Phe",
         "Lys"
       ],
-      "sequence_one_letter": "HXAWFK",
+      "sequence_one_letter": "HWAWFK",
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C47H58N12O6"
+      "chemical_formula": "C47H58N12O6",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "alarelin",
@@ -1802,6 +2857,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1845,7 +2929,29 @@
       "molecular_target": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
       "clinical_use": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
       "reported_side_effects": "Research-grade sequence. Systemic toxicity thresholds and metabolic clearance profiles are currently under open-reading-frame evaluation.",
-      "chemical_formula": "C147H237N43O43S"
+      "chemical_formula": "C147H237N43O43S",
+      "wiki_content": {
+        "summary": "Investigational bioactive compound categorized within the Experimental & Unclassified Bioactives domain. Evaluated in molecular assays for cellular modeling, targeted sequence binding, and structural metabolic interactions.",
+        "mechanism": "Primary sequence evaluated for selective binding within Experimental & Unclassified Bioactives pathways. Interacts with cellular signaling cascades to modulate metabolic and structural homeostasis.",
+        "effects": [
+          "Evaluated for potential therapeutic applications in Experimental & Unclassified Bioactives.",
+          "Maintains structural integrity and metabolic signaling in molecular models."
+        ],
+        "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection",
+        "half_life_index": "Medium",
+        "rationale": "Standard peptide pharmacokinetic profile requiring parenteral delivery.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.9,
+            "rationale": "Standard parenteral route.",
+            "required_modifications": []
+          }
+        ]
+      }
     },
     {
       "id": "pt-141",
@@ -1876,6 +2982,35 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous (SC) / Nasal",
+        "half_life_index": "Short",
+        "rationale": "Low molecular weight allows for nasal permeability but high enzymatic vulnerability.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.92,
+            "rationale": "Reliable systemic bioavailability.",
+            "required_modifications": []
+          },
+          {
+            "route": "Nasal Spray",
+            "viability_score": 0.65,
+            "rationale": "High patient compliance; viable for short oligopeptides.",
+            "required_modifications": [
+              "Permeation Enhancers"
+            ]
+          },
+          {
+            "route": "Oral",
+            "viability_score": 0.15,
+            "rationale": "Poor stability without cyclization or protection.",
+            "required_modifications": [
+              "Structural Cyclization"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1943,6 +3078,27 @@
           "Maintains structural integrity and metabolic signaling in molecular models."
         ],
         "synergies": []
+      },
+      "administration_profile": {
+        "preferred_route": "Subcutaneous Injection / IV",
+        "half_life_index": "Medium",
+        "rationale": "High molecular mass and rapid renal clearance necessitate parenteral administration.",
+        "optimized_routes": [
+          {
+            "route": "Subcutaneous",
+            "viability_score": 0.94,
+            "rationale": "Standard clinical route for long polypeptides.",
+            "required_modifications": [
+              "Depot Formatting"
+            ]
+          },
+          {
+            "route": "Intravenous",
+            "viability_score": 0.85,
+            "rationale": "Used for acute hospital settings.",
+            "required_modifications": []
+          }
+        ]
       }
     }
   ]

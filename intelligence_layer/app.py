@@ -2,7 +2,8 @@ import torch
 from transformers import AutoTokenizer, EsmModel
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, Field, field_validator
+from typing import List, Optional
 import re
 import json
 import os
@@ -96,6 +97,27 @@ class PeptideRequest(BaseModel):
             raise ValueError('Sequence contains non-standard amino acids')
         return v
 
+class RouteOptimization(BaseModel):
+    route: str = Field(..., description="E.g., Subcutaneous, Intravenous, Oral, Intranasal")
+    viability_score: float = Field(..., description="Algorithmic confidence rating from 0.0 to 1.0 based on stability")
+    rationale: str = Field(..., description="Anatomical/Physiological reason for this classification")
+    required_modifications: Optional[List[str]] = Field(default=[], description="E.g., PEGylation, LNP Encapsulation, Permeation Enhancers")
+
+class AdministrationMetadata(BaseModel):
+    preferred_route: str
+    half_life_index: str = Field(..., description="Estimated plasma half-life rating (Short, Medium, Long)")
+    predicted_primary_protease: Optional[str] = Field(None, description="Primary enzyme causing degradation (e.g., Dipeptidyl peptidase-4)")
+    optimized_routes: List[RouteOptimization]
+    rationale: Optional[str] = None
+
+class PeptideEnrichmentResponse(BaseModel):
+    id: str
+    name: str
+    category: str
+    amino_acid_sequence: str
+    chemical_formula: Optional[str]
+    administration_profile: AdministrationMetadata
+
 def calculate_molecular_weight(sequence):
     # Sum of residue weights + weight of H2O (18.015) for the termini
     weight = sum(AMINO_ACID_WEIGHTS.get(aa, 0) for aa in sequence)
@@ -158,6 +180,63 @@ def calculate_net_charge(sequence, ph=7.0):
             charge -= 1.0 / (1.0 + 10**(PKA_VALUES[aa] - ph))
     return round(charge, 2)
 
+def predict_administration_logic(sequence: str, mw: float, name: str = ""):
+    length = len(sequence)
+    preferred_route = "Subcutaneous Injection"
+    half_life_index = "Medium"
+    rationale = "Standard peptide pharmacokinetic profile requiring parenteral delivery."
+    optimized_routes = []
+
+    is_short = 0 < length < 10
+    is_long = length > 30
+    is_lipidated = any(x in name.lower() for x in ["liraglutide", "semaglutide", "tirzepatide", "detemir", "degludec"])
+    is_cyclic = "C" in sequence # Rough heuristic for disulfide bonds if Cysteines are present
+
+    if is_lipidated:
+        preferred_route = "Subcutaneous (SC)"
+        half_life_index = "Long"
+        rationale = "Lipidated chain enhances albumin binding and extends serum stability."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.98, "rationale": "Optimized for slow systemic release via albumin binding.", "required_modifications": ["Fatty Acid Acylation"]},
+            {"route": "Intravenous", "viability_score": 0.60, "rationale": "Possible but bypasses depot effect of lipid chain.", "required_modifications": []}
+        ]
+    elif is_short:
+        preferred_route = "Subcutaneous (SC) / Nasal"
+        half_life_index = "Short"
+        rationale = "Low molecular weight allows for nasal permeability but high enzymatic vulnerability."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.92, "rationale": "Reliable systemic bioavailability.", "required_modifications": []},
+            {"route": "Nasal Spray", "viability_score": 0.65, "rationale": "High patient compliance; viable for short oligopeptides.", "required_modifications": ["Permeation Enhancers"]},
+            {"route": "Oral", "viability_score": 0.15, "rationale": "Poor stability without cyclization or protection.", "required_modifications": ["Structural Cyclization"]}
+        ]
+    elif is_long:
+        preferred_route = "Subcutaneous Injection / IV"
+        half_life_index = "Medium"
+        rationale = "High molecular mass and rapid renal clearance necessitate parenteral administration."
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.94, "rationale": "Standard clinical route for long polypeptides.", "required_modifications": ["Depot Formatting"]},
+            {"route": "Intravenous", "viability_score": 0.85, "rationale": "Used for acute hospital settings.", "required_modifications": []}
+        ]
+    elif is_cyclic:
+        preferred_route = "Intravenous (IV) / IM"
+        half_life_index = "Medium"
+        rationale = "Cyclization provides elevated resistance to gastric proteases."
+        optimized_routes = [
+            {"route": "Intravenous", "viability_score": 0.95, "rationale": "Optimal for rapid systemic action.", "required_modifications": []},
+            {"route": "Oral", "viability_score": 0.45, "rationale": "Increased stability makes it a candidate for advanced oral systems.", "required_modifications": ["SNAC Carrier", "Permeation Enhancers"]}
+        ]
+    else:
+        optimized_routes = [
+            {"route": "Subcutaneous", "viability_score": 0.90, "rationale": "Standard parenteral route.", "required_modifications": []}
+        ]
+
+    return {
+        "preferred_route": preferred_route,
+        "half_life_index": half_life_index,
+        "rationale": rationale,
+        "optimized_routes": optimized_routes
+    }
+
 @app.get("/")
 def read_root():
     return {"message": "Peptide Intelligence API is running", "model": model_name, "peptides_loaded": len(PEPTIDE_DB)}
@@ -198,6 +277,8 @@ def predict(request: PeptideRequest):
     # For now, we'll derive it from the embeddings to simulate 'intelligence'
     stability_score = round(torch.sigmoid(torch.tensor(embeddings[0])).item() * 100, 2)
 
+    admin_profile = predict_administration_logic(sequence, mw)
+
     return {
         "sequence": sequence,
         "properties": {
@@ -205,7 +286,8 @@ def predict(request: PeptideRequest):
             "isoelectric_point": pi,
             "hydrophobicity": hydrophobicity,
             "chemical_formula": formula,
-            "serum_stability_score": stability_score
+            "serum_stability_score": stability_score,
+            "administration_profile": admin_profile
         },
         "embedding_summary": embeddings[:5]  # Return first 5 dimensions as a sample
     }
@@ -248,12 +330,15 @@ def analyze(request: PeptideRequest):
         nodes = ["GLP-1 Receptor", "Insulin Sensitivity"]
         similar_peptides = ["Semaglutide", "Liraglutide"]
 
+    admin_profile = predict_administration_logic(sequence, mw)
+
     return {
         "sequence": sequence,
         "metadata": {
             "common_name": f"Synthetic Sequence {sequence[:4]}...",
             "primary_category": primary_category,
-            "sub_categories": sub_categories
+            "sub_categories": sub_categories,
+            "administration_profile": admin_profile
         },
         "physiochemical_properties": {
             "molecular_weight": mw,
