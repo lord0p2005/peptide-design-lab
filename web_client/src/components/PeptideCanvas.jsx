@@ -3,22 +3,43 @@ import React from 'react';
 const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
   if (!peptide) {
     return (
-      <div className="flex-1 h-screen flex items-center justify-center bg-obsidian">
-        <p
-          className="text-white/10 uppercase tracking-[0.5em] text-[10px]"
-        >
-          Select a sequence to initiate visualization
-        </p>
+      <div className="flex-1 h-screen flex flex-col items-center justify-center bg-obsidian p-12 text-center">
+        <div className="max-w-md animate-in fade-in zoom-in duration-1000">
+          <img src="/logo.png" alt="Peptide Lab" className="h-16 w-16 mx-auto mb-8 opacity-20 grayscale" />
+          <h1 className="text-2xl font-black text-white/40 uppercase tracking-tighter mb-4">Neural Visualization Pipeline</h1>
+          <p className="text-white/20 uppercase tracking-[0.3em] text-[10px] leading-relaxed mb-12">
+            Select a bioactive sequence from the laboratory index to initiate structural mapping and biophysical profiling.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 border border-white/5 bg-white/[0.02] rounded-sm">
+              <p className="text-emerald-400 font-bold text-[10px] mb-1">ESM-2</p>
+              <p className="text-[9px] text-white/30 uppercase tracking-widest">Property Prediction</p>
+            </div>
+            <div className="p-4 border border-white/5 bg-white/[0.02] rounded-sm">
+              <p className="text-cyan-400 font-bold text-[10px] mb-1">D3-FORCE</p>
+              <p className="text-[9px] text-white/30 uppercase tracking-widest">Topology Mapping</p>
+            </div>
+          </div>
+          <div className="mt-12 flex items-center justify-center gap-4 text-[9px] text-white/10 uppercase tracking-[0.4em]">
+            <span>Press <kbd className="bg-white/5 px-1.5 py-0.5 rounded text-white/30 font-mono">/</kbd> to Search</span>
+          </div>
+        </div>
       </div>
     );
   }
 
-  const mrnaBlocks = peptide.genetic_mapping.mrna.split(' ');
-  const codingBlocks = peptide.genetic_mapping.coding_dna.split(' ');
-  const templateBlocks = peptide.genetic_mapping.template_dna.split(' ');
+  const mrnaBlocks = (peptide.genetic_mapping?.mrna || "").split(' ');
+  const codingBlocks = (peptide.genetic_mapping?.coding_dna || "").split(' ');
+  const templateBlocks = (peptide.genetic_mapping?.template_dna || "").split(' ');
 
   const blockWidth = "w-20";
   const labelWidth = "w-32";
+
+  const copyToClipboard = (text, label) => {
+    navigator.clipboard.writeText(text);
+    // Simple feedback could be added here if needed,
+    // but for "Editorial" feel, we keep it minimalist
+  };
 
   return (
     <div className="flex-1 h-screen overflow-y-auto bg-obsidian p-8 md:p-20 custom-scrollbar">
@@ -27,7 +48,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
         className="max-w-6xl mx-auto pt-12"
       >
         <header className="mb-24">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="flex-1">
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Sequence Specification</p>
               <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] max-w-3xl">
@@ -40,7 +61,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Therapeutic Profile</p>
               <p className="text-base leading-relaxed text-white/70 italic font-light">{peptide.clinical_use}</p>
@@ -56,13 +77,17 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
           <div className="flex justify-between items-center mb-12">
             <p className="text-[10px] uppercase tracking-[0.4em] text-white/40">Genetic Mapping</p>
             {peptide.chemical_formula && (
-              <div className="bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
-                 <span className="text-[10px] font-mono text-cyan-400 font-bold tracking-widest">{peptide.chemical_formula}</span>
-              </div>
+              <button
+                onClick={() => copyToClipboard(peptide.chemical_formula, 'Formula')}
+                className="bg-white/5 px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors cursor-copy group"
+                title="Copy Formula"
+              >
+                 <span className="text-[10px] font-mono text-cyan-400 font-bold tracking-widest group-active:text-white transition-colors">{peptide.chemical_formula}</span>
+              </button>
             )}
           </div>
 
-          <div className="bg-charcoal/30 border border-white/5 p-8 md:p-12 overflow-x-auto rounded-sm backdrop-blur-sm">
+          <div className="bg-charcoal/30 border border-white/5 p-8 md:p-12 overflow-x-auto rounded-sm backdrop-blur-sm shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]">
             <div className="min-w-max">
               {/* Amino Acid String of Beads - RESTORED */}
               <div className="flex items-center mb-20">
@@ -133,10 +158,22 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
               <div key={i} className="bg-charcoal/50 border border-white/5 p-8 rounded-sm relative overflow-hidden group hover:border-white/10 transition-all duration-500 shadow-2xl">
                 <p className="text-[9px] uppercase tracking-[0.2em] text-white/30 mb-3 group-hover:text-white/40 transition-colors">{prop.label}</p>
                 <div className="flex items-baseline gap-1">
-                  <p className={`text-2xl font-black font-mono ${prop.color}`}>
-                    {aiLoading ? "..." : (prop.value || "N/A")}
-                  </p>
-                  {prop.unit && <span className="text-[10px] text-white/20 font-mono">{prop.unit}</span>}
+                  {aiLoading ? (
+                    <div className="h-8 flex items-center">
+                      <div className="flex gap-1">
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <p className={`text-2xl font-black font-mono ${prop.color}`}>
+                        {prop.value || "N/A"}
+                      </p>
+                      {prop.unit && <span className="text-[10px] text-white/20 font-mono ml-1">{prop.unit}</span>}
+                    </>
+                  )}
                 </div>
                 {prop.label === "Serum Stability" && !aiLoading && prop.value && (
                   <div
@@ -151,7 +188,11 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
 
         <section className="pb-20">
           <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">Molecular Mechanism</p>
-          <div className="bg-charcoal border border-white/5 p-10 border-l-4 border-l-white/20 shadow-2xl">
+          <div
+            className="bg-charcoal border border-white/5 p-10 border-l-4 border-l-white/20 shadow-2xl cursor-pointer active:scale-[0.99] transition-transform"
+            onClick={() => copyToClipboard(peptide.sequence_one_letter, 'Sequence')}
+            title="Copy Sequence"
+          >
             <p className="text-xl leading-relaxed text-white/90 font-light italic tracking-tight">
               "{peptide.molecular_target}"
             </p>
@@ -159,7 +200,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
         </section>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 2px;
         }

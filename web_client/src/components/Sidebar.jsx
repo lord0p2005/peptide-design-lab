@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { checkApiHealth } from '../peptideService';
 
 const CATEGORY_DISPLAY_NAMES = {
   "Neuro-Regenerative & Nootropic Agents": "Neuro-Modulation",
@@ -11,6 +12,17 @@ const CATEGORY_DISPLAY_NAMES = {
 
 const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onSearchChange, isOpen, toggleSidebar }) => {
   const [expandedCategories, setExpandedCategories] = useState({});
+  const [apiStatus, setApiStatus] = useState('checking'); // 'checking', 'online', 'offline'
+
+  useEffect(() => {
+    const checkStatus = async () => {
+      const isOnline = await checkApiHealth();
+      setApiStatus(isOnline ? 'online' : 'offline');
+    };
+    checkStatus();
+    const interval = setInterval(checkStatus, 30000); // Check every 30s
+    return () => clearInterval(interval);
+  }, []);
 
   // Auto-expand categories when searching
   const isSearching = searchTerm.trim().length > 0;
@@ -23,18 +35,18 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
   };
 
   // Group peptides by category
-  const groupedPeptides = peptides.reduce((acc, peptide) => {
+  const groupedPeptides = React.useMemo(() => peptides.reduce((acc, peptide) => {
     const cat = peptide.category || "Experimental & Unclassified Bioactives";
     if (!acc[cat]) acc[cat] = [];
     acc[cat].push(peptide);
     return acc;
-  }, {});
+  }, {}), [peptides]);
 
-  const categories = Object.keys(groupedPeptides).sort((a, b) => {
+  const categories = React.useMemo(() => Object.keys(groupedPeptides).sort((a, b) => {
     const nameA = CATEGORY_DISPLAY_NAMES[a] || a;
     const nameB = CATEGORY_DISPLAY_NAMES[b] || b;
     return nameA.localeCompare(nameB);
-  });
+  }), [groupedPeptides]);
 
   return (
     <div className="h-full flex flex-col bg-charcoal border-r border-white/5">
@@ -43,22 +55,24 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
           onClick={toggleSidebar}
           className="flex items-center gap-3 text-white hover:text-white/70 transition-colors group mb-6"
         >
+          <img src="/logo.png" alt="Logo" className="h-6 w-6 object-contain" />
+          <h1 className="text-xl font-bold tracking-tighter uppercase italic">
+            Peptide Lab
+          </h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`h-5 w-5 transition-transform duration-300 ${!isOpen ? 'rotate-180' : ''}`}
+            className={`h-4 w-4 ml-auto text-white/20 group-hover:text-white/40 transition-transform duration-300 ${!isOpen ? 'rotate-180' : ''}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
           </svg>
-          <h1 className="text-xl font-bold tracking-tighter uppercase italic">
-            Peptide Lab
-          </h1>
         </button>
 
         <div className="relative">
           <input
+            id="global-search"
             type="text"
             placeholder="Search sequences..."
             className="w-full bg-obsidian border border-white/10 rounded-none px-4 py-2.5 text-[11px] uppercase tracking-widest focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/20"
@@ -68,7 +82,30 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
         </div>
       </div>
 
+      <div className="px-6 py-3 border-b border-white/5 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className={`w-1.5 h-1.5 rounded-full ${
+            apiStatus === 'online' ? 'bg-emerald-500 animate-pulse' :
+            apiStatus === 'offline' ? 'bg-rose-500' : 'bg-white/20'
+          }`} />
+          <span className="text-[8px] uppercase tracking-widest text-white/40">
+            AI Intelligence: {apiStatus}
+          </span>
+        </div>
+        <div className="text-[8px] uppercase tracking-widest text-white/20">
+          v1.0.4-LTS
+        </div>
+      </div>
+
       <div className="flex-1 overflow-y-auto custom-scrollbar">
+        {peptides.length === 0 && searchTerm && (
+          <div className="p-12 text-center">
+            <div className="text-[24px] mb-4 opacity-20">🔍</div>
+            <p className="text-[10px] uppercase tracking-widest text-white/20">
+              No sequences match your query
+            </p>
+          </div>
+        )}
         {categories.map((category) => {
           const isExpanded = expandedCategories[category] || isSearching;
           const displayCategory = CATEGORY_DISPLAY_NAMES[category] || category;

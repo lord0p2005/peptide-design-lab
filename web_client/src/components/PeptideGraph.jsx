@@ -80,7 +80,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
   const handleNodeClick = useCallback((node) => {
     if (node.type === 'peptide') {
       const peptide = peptides.find(p => p.id === node.id);
-      if (peptide) onSelectPeptide(peptide);
+      if (peptide) onSelectPeptide(peptide, 'graph');
     }
   }, [peptides, onSelectPeptide]);
 
