@@ -1,10 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
 import PeptideDetailsPanel from './components/PeptideDetailsPanel';
 import PeptideLoader from './components/PeptideLoader';
 import { fetchPeptides, predictPeptideProperties, analyzePeptide } from './peptideService';
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("Uncaught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex h-screen w-screen items-center justify-center bg-obsidian text-white p-12 text-center">
+          <div>
+            <h1 className="text-4xl font-black mb-4 uppercase tracking-tighter">System Error</h1>
+            <p className="text-white/40 uppercase tracking-widest text-[10px] mb-8">The neural pipeline encountered an unexpected termination.</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-8 py-3 bg-white text-obsidian font-bold uppercase text-[10px] tracking-widest hover:bg-white/90 transition-colors"
+            >
+              Reboot Pipeline
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 function App() {
   const [peptides, setPeptides] = useState([]);
@@ -23,6 +59,9 @@ function App() {
     setSelectedPeptide(peptide);
 
     const mode = currentViewMode || viewMode;
+    if (currentViewMode && currentViewMode !== viewMode) {
+      setViewMode(currentViewMode);
+    }
 
     if (mode === 'canvas') {
       setAiData(null);
@@ -50,6 +89,22 @@ function App() {
   };
 
   useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    } else {
+      setIsSidebarOpen(true);
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  // Initial check
+  if (window.innerWidth < 768) setIsSidebarOpen(false);
+
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+useEffect(() => {
     const loadData = async () => {
       try {
         const data = await fetchPeptides();
@@ -66,12 +121,16 @@ function App() {
     loadData();
   }, []);
 
-  const filteredPeptides = peptides.filter(p =>
-    p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (p.category && p.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
-    (p.sequence_one_letter && p.sequence_one_letter.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const filteredPeptides = peptides.filter(p => {
+    const search = searchTerm.toLowerCase();
+    return (
+      p.name?.toLowerCase().includes(search) ||
+      p.id?.toLowerCase().includes(search) ||
+      (p.category && p.category.toLowerCase().includes(search)) ||
+      (p.sequence_one_letter && p.sequence_one_letter.toLowerCase().includes(search)) ||
+      (p.sequence_three_letter && p.sequence_three_letter.join('').toLowerCase().includes(search))
+    );
+  });
 
   if (loading) {
     return <PeptideLoader />;
@@ -79,14 +138,21 @@ function App() {
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    // On mobile, if we are searching and there are results, we might want to keep the sidebar open
+    // but the current logic is fine.
+  };
+
   return (
+    <ErrorBoundary>
     <div className="flex h-screen w-screen bg-obsidian overflow-hidden font-sans relative">
 
       {/* Minimalist Floating Sidebar Trigger */}
       {!isSidebarOpen && (
         <button
           onClick={toggleSidebar}
-          className="fixed top-6 left-6 z-50 p-3 bg-charcoal/80 backdrop-blur-md border border-white/10 rounded-full text-white/50 hover:text-white hover:border-white/20 transition-all shadow-2xl"
+          className="fixed top-6 left-6 z-50 p-3 glass rounded-full text-white/50 hover:text-white hover:border-white/20 transition-all shadow-2xl"
           title="Open Lab"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +162,7 @@ function App() {
       )}
 
       {/* Floating View Toggle */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex bg-charcoal/80 backdrop-blur-md border border-white/10 rounded-full p-1 shadow-2xl">
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex glass rounded-full p-1 shadow-2xl">
         {[
           { id: 'canvas', label: 'Canvas' },
           { id: 'graph', label: 'Mind Map' }
@@ -115,16 +181,20 @@ function App() {
 
       {/* Sidebar */}
       <div
-        style={{ width: isSidebarOpen ? (window.innerWidth < 768 ? '100%' : '384px') : '0px' }}
-        className="h-full border-r border-white/5 bg-charcoal overflow-hidden shrink-0 z-40 relative transition-[width] duration-300 ease-in-out"
+        style={{
+          width: isSidebarOpen ? (window.innerWidth < 768 ? '100%' : '384px') : '0px',
+          opacity: isSidebarOpen ? 1 : 0,
+          visibility: isSidebarOpen ? 'visible' : 'hidden'
+        }}
+        className="h-full border-r border-white/5 bg-charcoal overflow-hidden shrink-0 z-40 relative transition-all duration-300 ease-in-out"
       >
-        <div className="w-full md:w-96 h-full">
+        <div className="w-full md:w-96 h-full overflow-hidden">
           <Sidebar
             peptides={filteredPeptides}
             selectedPeptideId={selectedPeptide?.id}
             onSelectPeptide={handleSelectPeptide}
             searchTerm={searchTerm}
-            onSearchChange={setSearchTerm}
+            onSearchChange={handleSearch}
             isOpen={isSidebarOpen}
             toggleSidebar={toggleSidebar}
           />
@@ -156,6 +226,7 @@ function App() {
         />
       </main>
     </div>
+    </ErrorBoundary>
   );
 }
 

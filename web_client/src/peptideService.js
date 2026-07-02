@@ -2,12 +2,31 @@ const API_BASE = typeof window !== 'undefined' && (window.location.hostname === 
   ? 'http://localhost:8000'
   : 'https://glassofwine-peptide-design-lab-api.hf.space';
 
+const TIMEOUT_MS = 15000; // Increased to 15s to allow for backend cold starts
+
+async function fetchWithTimeout(resource, options = {}) {
+    const timeout = options.timeout || TIMEOUT_MS;
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    try {
+        const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
+        return response;
+    } catch (error) {
+        clearTimeout(id);
+        throw error;
+    }
+}
+
 /**
  * Fetches peptide data from the SSOT API.
  */
 export const fetchPeptides = async () => {
     try {
-        const response = await fetch(`${API_BASE}/peptides`);
+        const response = await fetchWithTimeout(`${API_BASE}/peptides`);
         if (!response.ok) throw new Error('Peptide Database Offline');
         return await response.json();
     } catch (error) {
@@ -20,7 +39,7 @@ export const fetchPeptides = async () => {
 
 export const fetchPeptideById = async (id) => {
     try {
-        const response = await fetch(`${API_BASE}/peptides/${id}`);
+        const response = await fetchWithTimeout(`${API_BASE}/peptides/${id}`);
         if (!response.ok) throw new Error('Peptide Details Unavailable');
         return await response.json();
     } catch (error) {
@@ -34,10 +53,11 @@ export const fetchPeptideById = async (id) => {
  */
 export const predictPeptideProperties = async (sequence) => {
     try {
-        const response = await fetch(`${API_BASE}/predict`, {
+        const response = await fetchWithTimeout(`${API_BASE}/predict`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sequence })
+            body: JSON.stringify({ sequence }),
+            timeout: 15000
         });
         if (!response.ok) throw new Error('AI Service Offline');
         return await response.json();
@@ -56,10 +76,11 @@ export const predictPeptideProperties = async (sequence) => {
 
 export const analyzePeptide = async (sequence) => {
     try {
-        const response = await fetch(`${API_BASE}/analyze`, {
+        const response = await fetchWithTimeout(`${API_BASE}/analyze`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sequence })
+            body: JSON.stringify({ sequence }),
+            timeout: 15000
         });
         if (!response.ok) throw new Error('Analysis Service Offline');
         return await response.json();

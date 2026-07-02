@@ -13,9 +13,9 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
     );
   }
 
-  const mrnaBlocks = peptide.genetic_mapping.mrna.split(' ');
-  const codingBlocks = peptide.genetic_mapping.coding_dna.split(' ');
-  const templateBlocks = peptide.genetic_mapping.template_dna.split(' ');
+  const mrnaBlocks = (peptide.genetic_mapping?.mrna || "").split(' ');
+  const codingBlocks = (peptide.genetic_mapping?.coding_dna || "").split(' ');
+  const templateBlocks = (peptide.genetic_mapping?.template_dna || "").split(' ');
 
   const blockWidth = "w-20";
   const labelWidth = "w-32";
@@ -27,7 +27,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
         className="max-w-6xl mx-auto pt-12"
       >
         <header className="mb-24">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="flex-1">
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Sequence Specification</p>
               <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] max-w-3xl">
@@ -40,7 +40,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 border-t border-white/10 pt-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-4">Therapeutic Profile</p>
               <p className="text-base leading-relaxed text-white/70 italic font-light">{peptide.clinical_use}</p>
@@ -62,7 +62,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
             )}
           </div>
 
-          <div className="bg-charcoal/30 border border-white/5 p-8 md:p-12 overflow-x-auto rounded-sm backdrop-blur-sm">
+          <div className="bg-charcoal/30 border border-white/5 p-8 md:p-12 overflow-x-auto rounded-sm backdrop-blur-sm shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]">
             <div className="min-w-max">
               {/* Amino Acid String of Beads - RESTORED */}
               <div className="flex items-center mb-20">
@@ -133,10 +133,22 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
               <div key={i} className="bg-charcoal/50 border border-white/5 p-8 rounded-sm relative overflow-hidden group hover:border-white/10 transition-all duration-500 shadow-2xl">
                 <p className="text-[9px] uppercase tracking-[0.2em] text-white/30 mb-3 group-hover:text-white/40 transition-colors">{prop.label}</p>
                 <div className="flex items-baseline gap-1">
-                  <p className={`text-2xl font-black font-mono ${prop.color}`}>
-                    {aiLoading ? "..." : (prop.value || "N/A")}
-                  </p>
-                  {prop.unit && <span className="text-[10px] text-white/20 font-mono">{prop.unit}</span>}
+                  {aiLoading ? (
+                    <div className="h-8 flex items-center">
+                      <div className="flex gap-1">
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <div className="w-1 h-1 bg-white/20 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <p className={`text-2xl font-black font-mono ${prop.color}`}>
+                        {prop.value || "N/A"}
+                      </p>
+                      {prop.unit && <span className="text-[10px] text-white/20 font-mono ml-1">{prop.unit}</span>}
+                    </>
+                  )}
                 </div>
                 {prop.label === "Serum Stability" && !aiLoading && prop.value && (
                   <div
@@ -159,7 +171,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
         </section>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 2px;
         }

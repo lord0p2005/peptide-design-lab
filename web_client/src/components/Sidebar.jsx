@@ -23,18 +23,18 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
   };
 
   // Group peptides by category
-  const groupedPeptides = peptides.reduce((acc, peptide) => {
+  const groupedPeptides = React.useMemo(() => peptides.reduce((acc, peptide) => {
     const cat = peptide.category || "Experimental & Unclassified Bioactives";
     if (!acc[cat]) acc[cat] = [];
     acc[cat].push(peptide);
     return acc;
-  }, {});
+  }, {}), [peptides]);
 
-  const categories = Object.keys(groupedPeptides).sort((a, b) => {
+  const categories = React.useMemo(() => Object.keys(groupedPeptides).sort((a, b) => {
     const nameA = CATEGORY_DISPLAY_NAMES[a] || a;
     const nameB = CATEGORY_DISPLAY_NAMES[b] || b;
     return nameA.localeCompare(nameB);
-  });
+  }), [groupedPeptides]);
 
   return (
     <div className="h-full flex flex-col bg-charcoal border-r border-white/5">
@@ -43,18 +43,19 @@ const Sidebar = ({ peptides, selectedPeptideId, onSelectPeptide, searchTerm, onS
           onClick={toggleSidebar}
           className="flex items-center gap-3 text-white hover:text-white/70 transition-colors group mb-6"
         >
+          <img src="/logo.png" alt="Logo" className="h-6 w-6 object-contain" />
+          <h1 className="text-xl font-bold tracking-tighter uppercase italic">
+            Peptide Lab
+          </h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`h-5 w-5 transition-transform duration-300 ${!isOpen ? 'rotate-180' : ''}`}
+            className={`h-4 w-4 ml-auto text-white/20 group-hover:text-white/40 transition-transform duration-300 ${!isOpen ? 'rotate-180' : ''}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
           </svg>
-          <h1 className="text-xl font-bold tracking-tighter uppercase italic">
-            Peptide Lab
-          </h1>
         </button>
 
         <div className="relative">

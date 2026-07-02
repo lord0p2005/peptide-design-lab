@@ -85,6 +85,16 @@ export default function PeptideLoader() {
           />
         </div>
       </div>
+
+      <style>{`
+        @keyframes shimmer-fast {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-shimmer {
+          animation: shimmer-fast 1.5s infinite linear;
+        }
+      `}</style>
     </div>
   );
 }

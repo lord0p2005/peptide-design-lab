@@ -4,7 +4,7 @@ const PeptideDetailsPanel = ({ peptide, analysisData, loading, isOpen, onClose }
   if (!peptide) return null;
 
   return (
-    <div className={`fixed inset-y-0 right-0 w-full md:w-[450px] bg-charcoal/95 backdrop-blur-xl border-l border-white/10 z-[100] transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+    <div className={`fixed inset-y-0 right-0 w-full md:w-[450px] glass z-[100] transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
       <div className="h-full flex flex-col">
         <header className="p-8 border-b border-white/10 flex justify-between items-center">
           <div>
