@@ -74,6 +74,15 @@ export const predictPeptideProperties = async (sequence) => {
     }
 };
 
+export const checkApiHealth = async () => {
+    try {
+        const response = await fetchWithTimeout(`${API_BASE}/`, { timeout: 5000 });
+        return response.ok;
+    } catch {
+        return false;
+    }
+};
+
 export const analyzePeptide = async (sequence) => {
     try {
         const response = await fetchWithTimeout(`${API_BASE}/analyze`, {

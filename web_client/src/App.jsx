@@ -89,6 +89,23 @@ function App() {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Focus search on '/'
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        document.getElementById('global-search')?.focus();
+      }
+      // Close detail panel on 'Escape'
+      if (e.key === 'Escape') {
+        setIsDetailPanelOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  useEffect(() => {
   const handleResize = () => {
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
