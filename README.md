@@ -57,6 +57,7 @@ The automated data processing and enrichment heartbeat.
 - **Live UI Demo:** [lord0p2005.github.io/peptide-design-lab/](https://lord0p2005.github.io/peptide-design-lab/)
 - **AI API Documentation:** [Interactive Swagger UI](https://glassofwine-peptide-design-lab-api.hf.space/docs)
 - **Research Dataset:** [Kaggle Peptides Dataset](https://www.kaggle.com/datasets/glassofwine/peptides-dataset)
+- **Research Profile (ResearchGate):** [Tushar Singh](https://www.researchgate.net/profile/Tushar-Singh-16?ev=hdr_xprf)
 
 ---
 

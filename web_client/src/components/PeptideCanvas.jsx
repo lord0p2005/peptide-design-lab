@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
   if (!peptide) {
     return (
@@ -35,7 +33,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
   const blockWidth = "w-20";
   const labelWidth = "w-32";
 
-  const copyToClipboard = (text, label) => {
+  const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     // Simple feedback could be added here if needed,
     // but for "Editorial" feel, we keep it minimalist
@@ -78,7 +76,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
             <p className="text-[10px] uppercase tracking-[0.4em] text-white/40">Genetic Mapping</p>
             {peptide.chemical_formula && (
               <button
-                onClick={() => copyToClipboard(peptide.chemical_formula, 'Formula')}
+                onClick={() => copyToClipboard(peptide.chemical_formula)}
                 className="bg-white/5 px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors cursor-copy group"
                 title="Copy Formula"
               >
@@ -190,7 +188,7 @@ const PeptideCanvas = ({ peptide, aiData, aiLoading }) => {
           <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">Molecular Mechanism</p>
           <div
             className="bg-charcoal border border-white/5 p-10 border-l-4 border-l-white/20 shadow-2xl cursor-pointer active:scale-[0.99] transition-transform"
-            onClick={() => copyToClipboard(peptide.sequence_one_letter, 'Sequence')}
+            onClick={() => copyToClipboard(peptide.sequence_one_letter)}
             title="Copy Sequence"
           >
             <p className="text-xl leading-relaxed text-white/90 font-light italic tracking-tight">

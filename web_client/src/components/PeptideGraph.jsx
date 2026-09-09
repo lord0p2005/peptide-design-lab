@@ -1,16 +1,16 @@
-import React, { useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 
-const PeptideGraph = ({ peptides, onSelectPeptide }) => {
-  const CATEGORIES = {
-    "Neuro-Regenerative & Nootropic Agents": ["memory", "cognitive", "brain", "focus", "neuro", "neuroprotective", "Semax", "Selank", "MEH", "SEL"],
-    "Tissue-Repair & Angiogenic Modulators": ["healing", "repair", "angiogenesis", "wound", "tendon", "gastric", "recovery", "BPC", "GHK"],
-    "Metabolic & Mitochondrial Homeostasis Regulators": ["metabolism", "mitochondrial", "AMPK", "insulin", "glucose", "ATP", "exercise", "MOTS-c"],
-    "Secretagogues & Somatotropic Analogues": ["growth hormone", "secretagogue", "pituitary", "GHRH", "GH", "Ipamorelin"],
-    "Cosmeceutical & Epicutaneous Actives": ["wrinkle", "dermal", "skin", "collagen", "anti-aging", "topical", "Argireline"]
-  };
+const CATEGORIES = {
+  "Neuro-Regenerative & Nootropic Agents": ["memory", "cognitive", "brain", "focus", "neuro", "neuroprotective", "Semax", "Selank", "MEH", "SEL"],
+  "Tissue-Repair & Angiogenic Modulators": ["healing", "repair", "angiogenesis", "wound", "tendon", "gastric", "recovery", "BPC", "GHK"],
+  "Metabolic & Mitochondrial Homeostasis Regulators": ["metabolism", "mitochondrial", "AMPK", "insulin", "glucose", "ATP", "exercise", "MOTS-c"],
+  "Secretagogues & Somatotropic Analogues": ["growth hormone", "secretagogue", "pituitary", "GHRH", "GH", "Ipamorelin"],
+  "Cosmeceutical & Epicutaneous Actives": ["wrinkle", "dermal", "skin", "collagen", "anti-aging", "topical", "Argireline"]
+};
 
-  const getAffinities = (peptide) => {
+const PeptideGraph = ({ peptides, onSelectPeptide }) => {
+  const getAffinities = useCallback((peptide) => {
     const text = `${peptide.name} ${peptide.clinical_use} ${peptide.sequence_one_letter} ${peptide.category}`.toLowerCase();
     const affinities = [];
     for (const [category, keywords] of Object.entries(CATEGORIES)) {
@@ -22,7 +22,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
         affinities.push(peptide.category || 'Experimental & Unclassified Bioactives');
     }
     return [...new Set(affinities)];
-  };
+  }, []);
 
   const graphData = useMemo(() => {
     const nodes = [];
@@ -75,7 +75,7 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
     });
 
     return { nodes, links };
-  }, [peptides]);
+  }, [getAffinities, peptides]);
 
   const handleNodeClick = useCallback((node) => {
     if (node.type === 'peptide') {
@@ -123,15 +123,13 @@ const PeptideGraph = ({ peptides, onSelectPeptide }) => {
           ctx.font = `${fontWeight} ${fontSize}px sans-serif`;
 
           if (node.type !== 'peptide' || node.color === '#fbbf24') {
-            try {
-              const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 4);
-              gradient.addColorStop(0, `${node.color}22`);
-              gradient.addColorStop(1, 'transparent');
-              ctx.fillStyle = gradient;
-              ctx.beginPath();
-              ctx.arc(node.x, node.y, radius * 4, 0, 2 * Math.PI, false);
-              ctx.fill();
-            } catch (e) {}
+            const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 4);
+            gradient.addColorStop(0, `${node.color}22`);
+            gradient.addColorStop(1, 'transparent');
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, radius * 4, 0, 2 * Math.PI, false);
+            ctx.fill();
           }
 
           ctx.fillStyle = node.color;

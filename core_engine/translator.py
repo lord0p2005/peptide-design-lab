@@ -26,7 +26,7 @@ RNA_CODON_TABLE = {
 HUMAN_OPTIMIZED_CODONS = {
     'A': 'GCC', 'C': 'UGC', 'D': 'GAC', 'E': 'GAG', 'F': 'UUC',
     'G': 'GGC', 'H': 'CAC', 'I': 'AUC', 'K': 'AAG', 'L': 'CUG',
-    'M': 'AUG', 'N': 'AAC', 'P': 'CCC', 'Q': 'CAG', 'R': 'CUG', # Note: CUG/AGA depending on organism
+    'M': 'AUG', 'N': 'AAC', 'P': 'CCC', 'Q': 'CAG', 'R': 'CGC',
     'S': 'AGC', 'T': 'ACC', 'V': 'GUG', 'W': 'UGG', 'Y': 'UAC',
     'STOP': 'UGA'
 }
