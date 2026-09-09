@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PeptideDetailsPanel = ({ peptide, analysisData, loading, isOpen, onClose }) => {
   if (!peptide) return null;
 

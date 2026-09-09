@@ -101,7 +101,7 @@ class RouteOptimization(BaseModel):
     route: str = Field(..., description="E.g., Subcutaneous, Intravenous, Oral, Intranasal")
     viability_score: float = Field(..., description="Algorithmic confidence rating from 0.0 to 1.0 based on stability")
     rationale: str = Field(..., description="Anatomical/Physiological reason for this classification")
-    required_modifications: Optional[List[str]] = Field(default=[], description="E.g., PEGylation, LNP Encapsulation, Permeation Enhancers")
+    required_modifications: Optional[List[str]] = Field(default_factory=list, description="E.g., PEGylation, LNP Encapsulation, Permeation Enhancers")
 
 class AdministrationMetadata(BaseModel):
     preferred_route: str

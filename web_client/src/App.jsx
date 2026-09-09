@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import { useState, useEffect, Component } from 'react';
 import Sidebar from './components/Sidebar';
 import PeptideCanvas from './components/PeptideCanvas';
 import PeptideGraph from './components/PeptideGraph';
@@ -12,7 +12,7 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(_error) {
     return { hasError: true };
   }
 
@@ -127,7 +127,14 @@ useEffect(() => {
         const data = await fetchPeptides();
         setPeptides(data);
         if (data.length > 0) {
-          handleSelectPeptide(data[0], viewMode);
+          const firstPeptide = data[0];
+          setSelectedPeptide(firstPeptide);
+          setAiLoading(true);
+          const prediction = await predictPeptideProperties(firstPeptide.sequence_one_letter);
+          if (prediction) {
+            setAiData(prediction.properties);
+          }
+          setAiLoading(false);
         }
       } catch (error) {
         console.error("Failed to fetch peptides:", error);
